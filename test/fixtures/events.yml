@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_start: 2019-05-25 12:57:24
+  event_end: 2019-05-25 12:57:24
+  name: MyString
+  class_size: 1
+  gym: one
+
+two:
+  event_start: 2019-05-25 12:57:24
+  event_end: 2019-05-25 12:57:24
+  name: MyString
+  class_size: 1
+  gym: two
