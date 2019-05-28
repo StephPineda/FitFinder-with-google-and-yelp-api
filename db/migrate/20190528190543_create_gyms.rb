@@ -3,7 +3,7 @@ class CreateGyms < ActiveRecord::Migration[6.0]
     create_table :gyms do |t|
       t.string :name
       t.string :address
-      t.string :phone
+      t.string :phone_number
       t.integer :price_in_cents
 
       t.timestamps
