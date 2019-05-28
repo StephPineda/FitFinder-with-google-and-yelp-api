@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-5.times do |x|
-    Gym.create( name: "Gym#{x}", address: "#{x} Main Street. Miami, FL 33033", phone_number: "3055555555", price_in_cents: "50")
-end
 
-class_types = ["Karate", "Yoga"]
-24.times do |x|
+5.times do |x|
+     Gym.create( name: "Gym#", address: " Main Street. Miami, FL 33033", phone_number: "3055555555", price_in_cents: "50")
+ end            
+
+ class_types = ["Karate", "Yoga","MMA","BJJ","Cycling","Barre","Ballet","Crossfit","Gym","Pilates"]
+ 24.times do |x|
     e_start = DateTime.new
     e_end= e_start + 2.hours
-    Event.create(name: class_types.sample, class_size: rand(8..15), event_start: e_start , event_end: e_start, gym_id: Gym.all.ids.sample )
-end
+     Event.create(name: class_types.sample, class_size: rand(8..15), event_start: e_start , event_end: e_start, gym_id: Gym.all.ids.sample )
