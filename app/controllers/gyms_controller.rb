@@ -4,12 +4,17 @@ class GymsController < ApplicationController
   # GET /gyms
   # GET /gyms.json
   def index
-    @gyms = Gym.all
+    gyms = []
+    if params[:search_term]
+      gyms = Gym.where("name LIKE?", "%#{params[:search_term]}%")
+    end
+    @gyms = gyms.any? ? gyms : Gym.all
   end
 
   # GET /gyms/1
   # GET /gyms/1.json
   def show
+    @gym = Gym.find(params[:id])
   end
 
   # GET /gyms/new
