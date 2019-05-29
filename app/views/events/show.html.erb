@@ -1,0 +1,33 @@
+<h1><%= @event.name %></h1>
+<%= link_to "Back", search_path %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event start:</strong>
+  <%= @event.event_start %>
+</p>
+
+<p>
+  <strong>Event end:</strong>
+  <%= @event.event_end %>
+</p>
+
+<p>
+  <strong>Class size:</strong>
+  <%= @event.class_size %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Gym:</strong>
+  <%= @event.gym_id %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
