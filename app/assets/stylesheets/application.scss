@@ -64,7 +64,6 @@ $primary: #64a19d !default;
       transition: none !important;
       padding: 2rem 1.5rem !important;
       font-size: 1.3rem !important;
-      color: fade-out($white, 0.5) !important;
       &:hover {
         background-color: transparent !important;
         color: fade-out($white, 0.25) !important;
