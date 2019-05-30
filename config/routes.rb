@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#landing_page'
   resources :events
   resources :gyms
   get 'welcome/index'

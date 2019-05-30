@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  font-family: "Nunito";
+  letter-spacing: 0.0625em;
+}
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #161616 !default;
+
+$primary: #64a19d !default;
+
+.btn-primary {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
+  background-color: #64a19d !important;
+  border-color: #64a19d !important;
+  padding: 1.25rem 2rem !important;
+  color: white !important;
+  &:hover {
+    background-color: darken(#64a19d, 10%) !important;
+  }
+  &:focus {
+    background-color: darken(#64a19d, 10%) !important;
+    color: white !important;
+  }
+  &:active {
+    background-color: darken(#64a19d, 15%) !important !important;
+  }
+}
+
+.navbar-brand {
+  &:hover {
+    background-color: transparent !important;
+    color: fade-out($white, 0.25) !important;
+  }
+}
+
+#mainNav {
+  @media (min-width: 992px) {
+    .nav-link {
+      transition: none !important;
+      padding: 2rem 1.5rem !important;
+      font-size: 1.3rem !important;
+      color: fade-out($white, 0.5) !important;
+      &:hover {
+        background-color: transparent !important;
+        color: fade-out($white, 0.25) !important;
+      }
+      &:active {
+        color: white !important;
+      }
+    }
+  }
+}
