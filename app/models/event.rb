@@ -1,4 +1,3 @@
 class Event < ApplicationRecord
-   belongs_to :gym
-  include SearchableByName
+   belongs_to :gym, optional: true
 end
