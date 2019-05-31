@@ -12,7 +12,7 @@ export default class Calendar extends Component {
     tasks: {}
   };
 
-  fetchgyms = currentMonth => {
+  fetchTasks = currentMonth => {
     const monthStart = dateFns.startOfMonth(currentMonth);
     const monthEnd = dateFns.endOfMonth(monthStart);
     const startDate = dateFns.format(
@@ -27,16 +27,16 @@ export default class Calendar extends Component {
 
   nextMonth = () => {
     const currentMonth = dateFns.addMonths(this.state.currentMonth, 1);
-    this.fetchgyms(currentMonth);
+    this.fetchTasks(currentMonth);
   };
 
   prevMonth = () => {
     const currentMonth = dateFns.subMonths(this.state.currentMonth, 1);
-    this.fetchgyms(currentMonth);
+    this.fetchTasks(currentMonth);
   };
 
   render() {
-    const { currentMonth, currentDate, gyms } = this.state;
+    const { currentMonth, currentDate, tasks } = this.state;
     return (
       <div className="calendar">
         <Header
@@ -48,7 +48,7 @@ export default class Calendar extends Component {
         <Cells
           currentMonth={currentMonth}
           currentDate={currentDate}
-          gyms={gyms}
+          tasks={tasks}
         />
       </div>
     );
@@ -56,6 +56,6 @@ export default class Calendar extends Component {
 
   componentDidMount() {
     const { currentMonth } = this.state;
-    this.fetchGyms(currentMonth);
+    this.fetchTasks(currentMonth);
   }
 }

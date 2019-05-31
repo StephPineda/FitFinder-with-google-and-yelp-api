@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'hello_world', to: 'hello_world#index'
   root 'welcome#landing_page'
   resources :gyms
   resource :users

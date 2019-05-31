@@ -13,10 +13,10 @@ const Cell = props => {
       }`}
     >
       <div className="calendar-events">
-        {props.dailyGyms.map(gym => {
+        {props.dailyTasks.map(task => {
           return (
-            <div key={gym.id} className="calendar-event">
-              {gym.completed ? <s>{gym.description}</s> : gym.description}
+            <div key={task.id} className="calendar-event">
+              {task.completed ? <s>{task.description}</s> : task.description}
             </div>
           );
         })}
