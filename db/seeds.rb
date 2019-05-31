@@ -64,7 +64,7 @@ Gym.create([
 {:name => "NuShape Studio Cycling", :address => "56 NE 29th St, Miami, FL 33127", :phone_number =>"(786)534-5334", :price_in_cents =>"80"},
 {:name => "Body & Soul Cycling", :address => "56 NE 29th St, Miami, FL 33127", :phone_number =>"(786)534-5334", :price_in_cents =>"80"},
 ])
-class_types = ["Karate", "Yoga","MMA","BJJ","Cycling","Barre","Ballet","Crossfit","Gym","Pilates"]
+class_types = [ "Yoga","MMA","Cycling","Gym"]
  24.times do |x|
     e_start = DateTime.new
     e_end= e_start + 2.hours
