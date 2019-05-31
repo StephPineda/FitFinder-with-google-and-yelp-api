@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   has_secure_password
   validates_uniqueness_of :email
-  validates :email, presence: true
-  validates :firstname, presence: true
-  validates :lastname, presence: true
+  validates :firstname, presence: true, length: { maximum: 50 }
+  validates :lastname, presence: true, length: { maximum: 50 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+            format: { with: VALID_EMAIL_REGEX }
+
 end
