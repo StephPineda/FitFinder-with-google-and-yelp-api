@@ -67,9 +67,12 @@ Gym.create([
 class_types = ["Karate", "Yoga","MMA","Cycling","Gym"]
 
 (1..30).to_a.each do |day|
+  
   (10..15).to_a.each do |time|
     Event.create(:name => class_types.sample, class_size: rand(8..15), event_start: DateTime.parse("2019-6-#{day} #{time}:00") , event_end: DateTime.parse("2019-6-#{day} #{time}:00") + 2.hours, gym_id: Gym.all.ids.sample )
-  end
+  
+  
+    end
 end
 
 puts "seed completed"
