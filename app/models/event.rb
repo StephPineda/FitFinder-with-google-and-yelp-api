@@ -1,3 +1,3 @@
 class Event < ApplicationRecord
-   belongs_to :gym
+  belongs_to :gym
 end

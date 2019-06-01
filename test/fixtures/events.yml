@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  event_start: 2019-05-28 15:12:12
-  event_end: 2019-05-28 15:12:12
-  class_size: 1
+  event_start: 2019-05-31 19:32:47
+  event_end: 2019-05-31 19:32:47
   name: MyString
+  class_size: 1
   gym: one
 
 two:
-  event_start: 2019-05-28 15:12:12
-  event_end: 2019-05-28 15:12:12
-  class_size: 1
+  event_start: 2019-05-31 19:32:47
+  event_end: 2019-05-31 19:32:47
   name: MyString
+  class_size: 1
   gym: two
