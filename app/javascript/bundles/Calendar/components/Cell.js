@@ -11,12 +11,15 @@ const Cell = props => {
           ? "current"
           : ""
       }`}
+      onClick={e => {
+        props.handleDateClick(props.day);
+      }}
     >
       <div className="calendar-events">
         {props.dailyTasks.map(task => {
           return (
             <div key={task.id} className="calendar-event">
-              {task.completed ? <s>{task.description}</s> : task.description}
+              {task.name}
             </div>
           );
         })}
