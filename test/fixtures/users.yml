@@ -4,10 +4,10 @@ one:
   firstname: MyString
   lastname: MyString
   email: MyString
-  password_digest: MyString
+  password: MyString
 
 # two:
 #   firstname: MyString
 #   lastname: MyString
 #   email: MyString
-#   password_digest: MyString
+#   password: MyString
