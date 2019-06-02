@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ :name => 'Star Wars' }, { :name => 'Lord of the Rings' }])
 #   Character.create(:name => 'Luke', movie: movies.first)
 
-
+Gym.destroy_all
+Event.destroy_all 
 
 Gym.create([
 {:name => "Yoga Lab Miami", :address => "Main Street, Miami,FL 33127", :phone_number => "(305)555-5555", :price_in_cents => "50"},
@@ -65,14 +66,12 @@ Gym.create([
 {:name => "Body & Soul Cycling", :address => "56 NE 29th St, Miami, FL 33127", :phone_number =>"(786)534-5334", :price_in_cents =>"80"},
 ])
 class_types = ["Karate", "Yoga","MMA","Cycling","Gym"]
-
-(1..30).to_a.each do |day|
-  
-  (10..15).to_a.each do |time|
-    Event.create(:name => class_types.sample, class_size: rand(8..15), event_start: DateTime.parse("2019-6-#{day} #{time}:00") , event_end: DateTime.parse("2019-6-#{day} #{time}:00") + 2.hours, gym_id: Gym.all.ids.sample )
-  
-  
-    end
+(1..12).to_a.each do |month|
+  (1..28).to_a.each do |day|
+    (10..15).to_a.each do |time|
+      Event.create(:name => class_types.sample, class_size: rand(8..15), event_start: DateTime.parse("2019-#{month}-#{day} #{time}:00") , event_end: DateTime.parse("2019-#{month}-#{day} #{time}:00") + 2.hours, gym_id: Gym.all.ids.sample )
+      end
+  end
 end
 
 puts "seed completed"
