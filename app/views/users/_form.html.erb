@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid bg-dark user-form">
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
@@ -22,33 +22,35 @@
 
                 <div class="form-label-group">
                   <%= form.text_field :firstname, class: 'form-control', placeholder: 'Username', required: true, autofocus: true %>
-                  <%= form.label 'First Name' %>
+                  <%= form.label :firstname, 'First Name' %>
                 </div>
 
                 <div class="form-label-group">
                   <%= form.text_field :lastname, class: 'form-control', placeholder: 'lastname', required: true %>
-                  <%= form.label 'Last Name' %>
+                  <%= form.label :lastname, 'Last Name' %>
                 </div>
 
                 <div class="form-label-group">
                   <%= form.text_field :email, class: 'form-control', placeholder: 'Email Address', required: true %>
-                  <%= form.label 'Email' %>
+                  <%= form.label :email, 'Email' %>
                 </div>
 
                 <div class="form-label-group">
                   <%= form.password_field :password_digest, class: 'form-control', placeholder: 'password', required: true %>
-                  <%= form.label 'Password' %>
+                  <%= form.label :password_digest, 'Password' %>
                 </div>
 
                 <div class="form-label-group">
                 <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Password', required: true %>
-                <%= form.label 'Confirm password' %>
+                <%= form.label :password_confirmation, 'Confirm password' %>
               </div>
               
              
                 <div class="actions">
                   <%= form.submit 'Register', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
-                  <a class="d-block text-center mt-2 small" href="#">Sign In</a>
+                  <a class="d-block text-center mt-2 small ancher-hover"  href="#">Sign In</a>
+                  <a class="d-block text-center mt-2 small ancher-hover"  href="/">Back</a>
+                  
                 </div>
                 <hr class="my-4">
 
