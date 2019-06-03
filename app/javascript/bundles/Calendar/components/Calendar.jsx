@@ -4,11 +4,14 @@ import Header from "./Header";
 import Days from "./Days";
 import Cells from "./Cells";
 import axios from "axios";
+import CalendarModal from "./CalendarModal";
 
 export default class Calendar extends Component {
   state = {
     currentMonth: new Date(),
     currentDate: new Date(),
+    selectedDate: new Date(),
+    modalOpen: false,
     tasks: {}
   };
 
@@ -35,8 +38,22 @@ export default class Calendar extends Component {
     this.fetchTasks(currentMonth);
   };
 
+  handleDateClick = day => {
+    this.setState({ selectedDate: day, modalOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ modalOpen: false });
+  };
+
   render() {
-    const { currentMonth, currentDate, tasks } = this.state;
+    const {
+      currentMonth,
+      currentDate,
+      tasks,
+      modalOpen,
+      selectedDate
+    } = this.state;
     return (
       <div className="calendar">
         <Header
@@ -49,6 +66,13 @@ export default class Calendar extends Component {
           currentMonth={currentMonth}
           currentDate={currentDate}
           tasks={tasks}
+          handleDateClick={this.handleDateClick}
+        />
+        <CalendarModal
+          modalOpen={modalOpen}
+          selectedDate={selectedDate}
+          closeModal={this.closeModal}
+          dailyTasks={tasks[dateFns.format(selectedDate, "YYYY-MM-DD")] || []}
         />
       </div>
     );
