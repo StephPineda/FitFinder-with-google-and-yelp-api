@@ -65,6 +65,7 @@ Gym.create([
 {:name => "NuShape Studio Cycling", :address => "56 NE 29th St, Miami, FL 33127", :phone_number =>"(786)534-5334", :price_in_cents =>"80"},
 {:name => "Body & Soul Cycling", :address => "56 NE 29th St, Miami, FL 33127", :phone_number =>"(786)534-5334", :price_in_cents =>"80"},
 ])
+
 class_types = ["Karate", "Yoga","MMA","Cycling","Gym"]
 (1..12).to_a.each do |month|
   (1..28).to_a.each do |day|
