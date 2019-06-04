@@ -5,10 +5,11 @@ class GymsController < ApplicationController
   # GET /gyms.json
   def index
     gyms = []
-    if params[:search_term]
-      gyms = Gym.where("name LIKE?", "%#{params[:search_term]}%")
+    if params[:term]
+      gyms = Gym.where("name ilike ?", "%#{params[:term]}%")
     end
     @gyms = gyms.any? ? gyms : Gym.all
+  
   end
 
   # GET /gyms/1

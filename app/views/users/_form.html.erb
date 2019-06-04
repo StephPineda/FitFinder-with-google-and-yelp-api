@@ -3,8 +3,9 @@
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
           <div class="card-img-left d-none d-md-flex">
+           
              <!-- Background image for card set in CSS! -->
-          </div>
+          
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
               <%= form_with(model: user, local: true, class: 'form-signin') do |form| %>
@@ -44,7 +45,6 @@
                 <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Password', required: true %>
                 <%= form.label :password_confirmation, 'Confirm password' %>
               </div>
-              
              
                 <div class="actions">
                   <%= form.submit 'Register', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
@@ -73,12 +73,7 @@
             </div>
       </div>
     </div>
+
   </div>
 </div>
-
-<%
-=begin%>
- ---------------------------------- 
-<%
-=end%>
 

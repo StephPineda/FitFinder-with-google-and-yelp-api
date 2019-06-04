@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Welcome to the Fit Finder Community!' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -72,7 +73,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:firstname,
                                    :lastname,
                                    :email,
-                                   :password_digest,
+                                   :password,
                                    :password_confirmation)
     end
 end
