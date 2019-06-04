@@ -35,8 +35,18 @@
             </li>
           </ul>
           <%= form_with(url: gyms_path, method: :get, local: true) do |form| %>
-            <%= form.search_field :term, placeholder: 'Search', value: params[:term] %>
-            <%= form.submit 'Search', class: 'btn btn-outline-secondary my-2 my-sm-0' %>
+            <%#= form.search_field :term, placeholder: 'Search', value: params[:term] %>
+            <%#= form.submit 'Search', class:'input-group mb-3' %>
+          
+  <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="form.submit();">search</button>
+  </div>
+</div>
+
+
+
           <% end  unless params[:action] == 'landing_page' %> 
          </nav>
         </div>
