@@ -17,6 +17,7 @@
 body {
   font-family: "Nunito";
   letter-spacing: 0.0625em;
+  min-height: 100vh;
 }
 
 $white: #fff !default;
@@ -54,7 +55,6 @@ $primary: #64a19d !default;
 .navbar-brand {
   &:hover {
     background-color: transparent !important;
-    color: fade-out($white, 0.25) !important;
   }
 }
 
@@ -63,10 +63,9 @@ $primary: #64a19d !default;
     .nav-link {
       transition: none !important;
       padding: 2rem 1.5rem !important;
-      font-size: 1.3rem !important;
+      font-size: 1rem !important;
       &:hover {
         background-color: transparent !important;
-        color: fade-out($white, 0.25) !important;
       }
       &:active {
         color: white !important;
