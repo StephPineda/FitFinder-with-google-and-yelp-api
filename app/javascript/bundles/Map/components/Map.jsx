@@ -9,11 +9,26 @@ class Map extends Component{
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',
       zoom: 13,
-      center: [position.coords.longitude, position.coords.latitude]
+      center: [position.coords.longitude, position.coords.latitude],
     });
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: { enableHighAccuracy: true },
+      trackUserLocation: true,
+      showUserLocation: true
+    }))
+    console.log( "---------", this.props.coords );
+
+    let markers = this.props.coords.map( coord => {
+      let marker = new mapboxgl.Marker()
+      marker.setPopup(
+        new Popup()
+      )
+      marker.setLngLat( coord ).addTo( map )
+    })
   }
 
   componentDidMount(){
+    console.log( "---------", this.props.position );
     this.props.position ? this.drawMap( this.props.position ) : navigator.geolocation.getCurrentPosition( this.drawMap )
   }
 
