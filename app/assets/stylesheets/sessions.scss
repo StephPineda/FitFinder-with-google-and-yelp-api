@@ -2,9 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
+}
+
+#marginal {
+  margin-top: 8rem !important;
+}
+
+#sign-in-bg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/1253596/pexels-photo-1253596.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260") !important;
+  background-size: 100vw;
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+.background-test {
+  margin: 0 !important;
 }
 
 body {
