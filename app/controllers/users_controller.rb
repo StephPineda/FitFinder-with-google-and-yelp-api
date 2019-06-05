@@ -22,11 +22,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    #if @user.update_attributes(user_params)
-    #  redirect_to @user
-    #else
-    #  render 'edit'
-    #end
   end
 
   # POST /users
@@ -86,13 +81,13 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        alert "Please log in."
+        flash[:alert] = "Please log in."
         redirect_to login_url
       end
     end
 
     def correct_user
-     @user = User.find(params[:id])
-     redirect_to(root_url) unless @user == current_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
    end
 end
