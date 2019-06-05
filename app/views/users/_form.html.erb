@@ -27,17 +27,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :password_digest %>
-    <%= form.password_field :password_digest %>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
   </div>
-<!-- Add password_confirmation field to form. adding secure password to model
- but will allow you to add the confirmation field to the form. It's not saved
- to the database.-->
- <div class="field">
-   <%= form.label :password_confirmation %>
-   <%= form.password_field :password_confirmation %>
- </div>
-  <div class="actions">
+
+  <div class="field">
+    <%= form.label :confirm_password %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions" action="/users" class="new_user" id="new_user" method="post">
     <%= form.submit %>
   </div>
 <% end %>

@@ -4,12 +4,10 @@ class GymsController < ApplicationController
   # GET /gyms
   # GET /gyms.json
   def index
-    gyms = []
-    if params[:term]
-      gyms = Gym.where("name ilike ?", "%#{params[:term]}%")
-    end
-    @gyms = gyms.any? ? gyms : Gym.all
-  
+    @gyms = Gym.all
+    @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
+    @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
+    @terms = [params[:search_term], params[:zipcode]].join(' ')
   end
 
   # GET /gyms/1
