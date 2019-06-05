@@ -1,25 +1,149 @@
 // Place all the styles related to the Gyms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
 
+.lead {
+  float: left;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 14px;
+  position: relative;
+  z-index: 3;
+  margin-top: 30px;
+}
 
-hgroup { padding-left: 15px; border-bottom: 1px solid #ccc; }
-hgroup h1 { font: 500 normal 1.625em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin-top: 0; line-height: 1.15; }
-hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #2a3644; margin: 0; padding-bottom: 10px; }
+.lead span {
+  font-family: "Libre Baskerville", serif;
+  display: block;
+  font-size: 45px;
+  text-transform: none;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-weight: 700;
+}
 
-.search-result .thumbnail { border-radius: 0 !important; }
-.search-result:first-child { margin-top: 0 !important; }
-.search-result { margin-top: 20px; }
-.search-result .col-md-2 { border-right: 1px dotted #ccc; min-height: 140px; }
-.search-result ul { padding-left: 0 !important; list-style: none;  }
-.search-result ul li { font: 400 normal .85em "Roboto",Arial,Verdana,sans-serif;  line-height: 30px; }
-.search-result ul li i { padding-right: 5px; }
-.search-result .col-md-7 { position: relative; }
-.search-result h3 { font: 500 normal 1.375em "Roboto",Arial,Verdana,sans-serif; margin-top: 0 !important; margin-bottom: 10px !important; }
-.search-result h3 > a, .search-result i { color: #248dc1 !important; }
-.search-result p { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; }
-.search-result span.plus { position: absolute; right: 0; top: 126px; }
-.search-result span.plus a { background-color: #248dc1; padding: 5px 5px 3px 5px; }
-.search-result span.plus a:hover { background-color: #414141; }
-.search-result span.plus a i { color: #fff !important; }
-.search-result span.border { display: block; width: 97%; margin: 0 15px; border-bottom: 1px dotted #ccc; }
+.lead a {
+  color: #fff;
+  font-weight: bold;
+}
+
+// body {
+//   background: #24c6dc;
+//   /* fallback for old browsers */
+//   background: -webkit-linear-gradient(to bottom, #514a9d, #24c6dc);
+//   /* Chrome 10-25, Safari 5.1-6 */
+//   background: linear-gradient(to bottom, #514a9d, #24c6dc);
+//   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// }
+
+.head {
+  float: left;
+  width: 100%;
+}
+
+.search-box {
+  width: 90%;
+  margin: 3rem auto 40px auto;
+  box-shadow: 10px 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.listing-block {
+  background: #fff;
+  height: 500px;
+  padding-top: 20px;
+  overflow-y: scroll;
+}
+
+.slimScrollDiv {
+  width: 41% !important;
+}
+
+.media {
+  background: #fff;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.media img {
+  width: 200px;
+  margin: 0;
+  height: 136px;
+}
+
+.media-body {
+  border: 1px solid #bcbcbc;
+  border-left: 0;
+  min-height: 136px;
+}
+
+.media .price {
+  float: left;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  color: #4765ab;
+}
+
+.media .price small {
+  display: block;
+  font-size: 17px;
+  color: #232323;
+}
+
+.media .stats {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.media .stats span {
+  float: left;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.media .stats span i {
+  margin-right: 7px;
+  color: #4765ab;
+}
+
+.media .address {
+  float: left;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #888;
+}
+
+.media .fav-box {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 4px;
+  color: #e74c3c;
+}
+
+.map-box {
+  background-color: #a3ccff;
+}
+
+hgroup {
+  padding-left: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+hgroup h1 {
+  font: 500 normal 1.625em "Roboto", Arial, Verdana, sans-serif;
+  color: #2a3644;
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+hgroup h2.lead {
+  font: normal normal 1.125em "Roboto", Arial, Verdana, sans-serif;
+  color: #2a3644;
+  margin: 0;
+  padding-bottom: 10px;
+}
