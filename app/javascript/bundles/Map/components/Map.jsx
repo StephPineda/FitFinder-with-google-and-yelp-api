@@ -18,12 +18,12 @@ class Map extends Component{
     }))
     console.log( "---------", this.props.coords );
 
-    let markers = this.props.coords.map( coord => {
+    let markers = this.props.gyms.map( gym => {
       let marker = new mapboxgl.Marker()
-      marker.setPopup(
-        new Popup()
-      )
-      marker.setLngLat( coord ).addTo( map )
+        marker.setPopup(
+          new mapboxgl.Popup().setHTML(`<p>${gym.name}</p><br/><p>${gym.address}</p>`).addTo(map)
+        )
+      marker.setLngLat( gym.coords ).addTo( map )
     })
   }
 

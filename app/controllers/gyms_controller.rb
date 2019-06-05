@@ -16,8 +16,13 @@ class GymsController < ApplicationController
       data = Geocoder.search(gym.address)
       next if data.empty?
       data = data.first.data
-      [ data['lon'], data['lat'] ]
-    end.compact
+
+      {
+        coords: [ data['lon'], data['lat'] ],
+        name: gym.name,
+        address: gym.address
+      }
+    end
 
   end
 
