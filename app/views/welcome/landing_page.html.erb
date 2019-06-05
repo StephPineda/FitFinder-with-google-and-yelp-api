@@ -23,45 +23,18 @@
             <div class="searchheader">
               Find Your Perfect Workout Here!
             </div>
-            <form>
+            <%= form_with url: gyms_path, local: true, method: 'get' do |f| %>
               <div class="form-group">
-                <!-- >
+                <%= f.search_field :search_term, class: 'form-control search-input', placeholder: 'Workout Type...' %>
+                <%= f.number_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
               </div>
-              <div class="form-group form-check">
-                />
-                <label class="form-check-label" for="exampleCheck1"
-                  >Check me out</label
-                > -->
-              </div>
-
-              <input
-                type="search"
-                class="form-control search-input"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Workout Type..."
-              />
-                <input
-                type="number"
-                class="form-control search-input"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Zipcode..."
-              />
-             
-              
-              
-              <button type="submit" class="btn btn-primary buttonclass">
-                Search
-              </button>
-              
-              
-            </form>
+              <%= f.submit 'Search', class: 'btn-btn-primary buttonclass' %>
+            <% end %>
           </div>
         </div>
       </div>
     </section>
-    
+
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section bg-light">
