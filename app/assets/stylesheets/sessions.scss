@@ -1,7 +1,6 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 * {
   margin: 0;
   padding: 0;
@@ -135,4 +134,16 @@ body {
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+  .checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
