@@ -1,25 +1,33 @@
-<% provide(:title, "Log in") %>
+<div id="sign-in-bg">
+  <div class="row background-test">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div id="marginal" class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+          <%= form_for(:session, url: login_path, class: "form-signin") do |f| %>
+            <div class="form-label-group">
+              <%= f.email_field :email, class: 'form-control', id: 'inputEmail', required: true, autofocus: true, placeholder: "Email address" %>
+              <label for="inputEmail">Email address</label>
+            </div>
 
-<div class="container">
-  <h1>Log in</h1>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(:session, url: login_path) do |f| %>
+            <div class="form-label-group">
+              <%= f.password_field :password, class: 'form-control', id: 'inputPassword', required: true, placeholder: 'Password' %>
+              <label for="inputPassword">Password</label>
+            </div>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Remember password</label>
+            </div>
+            <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block text-uppercase" %>
+            <hr class="my-4">
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-        <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me</span>
-      <% end %>
-
-        <%= f.submit "Log in", class: "btn btn-primary" %>
-      <% end %>
-
-      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

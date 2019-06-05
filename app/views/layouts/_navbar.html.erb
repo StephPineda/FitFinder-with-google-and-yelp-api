@@ -34,9 +34,7 @@
             >
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="signup"
-            >Register</a
-            >
+          <a class="nav-link js-scroll-trigger" href="signup">Register</a>
         </li>
       </ul>
       <%= form_with(url: gyms_path, method: :get, local: true) do |form| %>
@@ -44,7 +42,7 @@
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="form.submit();">search</button>
+            <button class="btn btn-secondary" type="button" id="button-addon2" onclick="form.submit();">search</button>
           </div>
         </div>
 
