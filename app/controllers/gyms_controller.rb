@@ -8,6 +8,22 @@ class GymsController < ApplicationController
     @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
     @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
     @terms = [params[:search_term], params[:zipcode]].join(' ')
+    if params[:zipcode].present?
+      result = Geocoder.search("United States #{params[:zipcode]}").first.data
+      @position =  { coords: { latitude: result["lat"], longitude: result["lon"] } }
+    end
+    @coordinates = @gyms.map do |gym|
+      data = Geocoder.search(gym.address)
+      next if data.empty?
+      data = data.first.data
+
+      {
+        coords: [ data['lon'], data['lat'] ],
+        name: gym.name,
+        address: gym.address
+      }
+    end
+
   end
 
   # GET /gyms/1
