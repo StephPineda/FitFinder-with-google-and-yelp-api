@@ -147,3 +147,36 @@ hgroup h2.lead {
   margin: 0;
   padding-bottom: 10px;
 }
+
+.nav {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.container-fluid {
+  padding-top: 50px;
+  margin-bottom: 0;
+}
+.bumper {
+  height: 50px;
+}
+
+#gym-view {
+  padding-top: 60px;
+}
+
+#gym-show {
+  display: flex;
+  flex-direction: row;
+}
+.gym-label {
+  width: 100%;
+}
+.mediacal {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.calbox{
+  width: 50%;
+}

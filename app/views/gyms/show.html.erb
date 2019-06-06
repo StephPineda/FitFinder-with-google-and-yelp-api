@@ -1,28 +1,37 @@
-<h1><%= @gym.name %></h1>
-<%= link_to "Back", search_path %>
+<div id="gym-view" class="container">
 
+</div>
 
-<p id="notice"><%= notice %></p>
+<div class="clearfix"></div>
+<section class="search-box">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 listing-block">
+        <div id="gym-show">
+          <div class="mediacal" >
+            <div class="gym-label">
+              <h1><%= @gym.name %></h1>
+              <%= image_tag Gym::IMGS.sample, width:"300px" %>
+            </div>
+             <p>
+               <strong>Address:</strong>
+               <%= @gym.address %>
+             </p>
+             <p>
+               <strong>Phone number:</strong>
+               <%= @gym.phone_number %>
+             </p>
+             <p>
+               <strong>Price:</strong>
+               $ <%= @gym.price_in_cents %>
+             </p>
+          </div>
+          <div class="col-md-7 mx-0 px-0 calbox">
+            <%= react_component 'Calendar', prerender: false %>
+          </div>
+        </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @gym.name %>
-</p>
+      </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @gym.address %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @gym.phone_number %>
-</p>
-
-<p>
-  <strong>Price in cents:</strong>
-  <%= @gym.price_in_cents %>
-</p>
-
-<%= link_to 'Edit', edit_gym_path(@gym) %> |
-<%= link_to 'Back', gyms_path %>
+    </div>
+  </section>
