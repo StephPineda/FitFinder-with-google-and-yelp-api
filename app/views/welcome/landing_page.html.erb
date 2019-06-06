@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
-        <div class="mx-auto text-center">
+        <div class="mx-auto text-center animated zoomIn pulse" id="logopopup">
           <h1 class="mx-auto my-0 text-uppercase">FIT FINDER</h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">
             "The body achieves what the mind believes"
@@ -25,12 +25,22 @@
             </div>
             <%= form_with url: gyms_path, local: true, method: 'get' do |f| %>
               <div class="form-group">
-                <%= f.search_field :search_term, class: 'form-control search-input', placeholder: 'Workout Type...' %>
-                <%= f.number_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
+                <select class="form-control">
+                  <option value="select a workout">Select a Workout</option>
+                  <option value="Ballet">Ballet</option>
+                  <option value="Karate">Karate</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="MMA">MMA</option>
+                  <option value="Cycling">Cycling</option>
+                  <option value="Gym">Gym</option>
+                </select> 
               </div>
-              <%= f.submit 'Search', class: 'btn-btn-primary buttonclass' %>
+              <div class="form-group">
+                <%= f.text_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
+              </div>
+              <%= f.submit 'Search', class: 'btn btn-primary' %>
             <% end %>
-          </div>
+          </>
         </div>
       </div>
     </section>

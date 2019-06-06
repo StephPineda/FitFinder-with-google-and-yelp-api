@@ -66,7 +66,7 @@ Gym.create([
 {:name => "Body & Soul Cycling", :address => "56 NE 29th St, Miami, FL 33127", :phone_number =>"(786)534-5334", :price_in_cents =>"80"},
 ])
 
-class_types = ["Karate", "Yoga","MMA","Cycling","Gym"]
+class_types = ["Karate", "Yoga","MMA","Cycling","Gym","Ballet"]
 (1..12).to_a.each do |month|
   (1..28).to_a.each do |day|
     (10..15).to_a.each do |time|
