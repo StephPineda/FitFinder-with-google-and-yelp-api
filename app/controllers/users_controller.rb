@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @myevents = Userevent.where(:userid=> current_user.id)
   end
 
   # GET /users/new
@@ -75,6 +76,7 @@ class UsersController < ApplicationController
                                    :lastname,
                                    :email,
                                    :password,
+                                   :password_digest,
                                    :password_confirmation)
     end
 

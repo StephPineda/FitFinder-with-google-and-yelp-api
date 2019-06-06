@@ -8,22 +8,35 @@ const CalendarModal = props => (
       {dateFns.format(props.selectedDate, "dddd, MMMM Do")}
     </ModalHeader>
     <ModalBody>
-      <ul>
+      <table>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
         {props.dailyTasks.map(task => {
           return (
-            <li key={task.id}>
+          <tr>
+            <td key={task.id}>
               <a href={task.location}>
                 {task.name} | {task.event_start}
               </a>
-            </li>
+            </td>
+            <td>
+              <a href="/user/${user_id}" class="btn btn-info btn-sm eventbtn">Book Now</a>
+            </td>
+          </tr>
           );
         })}
         {props.dailyTasks.length === 0 && (
           <p>
-            <i>No tasks due today</i>
+            <i>No classes scheduled today</i>
           </p>
         )}
-      </ul>
+        </tbody>
+      </table>
     </ModalBody>
   </Modal>
 );

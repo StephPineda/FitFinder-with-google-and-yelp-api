@@ -25,13 +25,12 @@
                <strong>Price:</strong>
                $ <%= @gym.price_in_cents %>
              </p>
+             <button class="btn btn-primary gym-show-button">Add to Favorites</button>
           </div>
           <div class="col-md-7 mx-0 px-0 calbox">
             <%= react_component 'Calendar', prerender: false %>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
