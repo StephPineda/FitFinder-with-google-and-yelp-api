@@ -1,13 +1,18 @@
-<section class="head">
-  <div class="container">
+<header>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/9VlfxuMJxTw?autoplay=1&loop=1&mute=1&%color=white&iv_load_policy=3&playlist=9VlfxuMJxTw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  </div>
+    <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+    <div class="w-100 text-white"></div>
+</header>
+<section class="head">
+  <div class="container"></div>
 </section>
 <hgroup class="mb20">
   <div class="lead">
-    <strong class="lead"><%= @gyms.count %></strong>
+   <strong class="lead"><%= @gyms.count %></strong>
     <%= 'result'.pluralize(@gyms.count) %> <%= @gyms.count == 1 ? 'was' : 'were' %> found for the search for
-    <strong class="lead"><%= @terms %></strong>
+   <strong class="lead"><%= @terms %></strong>
   </div>
 </hgroup>
 <div class="clearfix"></div>
@@ -30,8 +35,7 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
-            
-          <span><i class="fa fa-arrows-alt"></i><%= link_to gym.phone_number, "tel:#{gym.phone_number}"%></span>
+            <span><i class="fa fa-arrows-alt"></i><%= link_to gym.phone_number, "tel:#{gym.phone_number}"%></span>
             </div>
             <div class="address"><%= gym.address %></div>
           </div>

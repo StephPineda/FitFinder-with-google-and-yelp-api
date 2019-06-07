@@ -150,3 +150,12 @@ hgroup h2.lead {
 .checked {
   color: orange;
 }
+
+
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 103vh;        /* Viewport-relative units */
+    width: 100vw;
+}
