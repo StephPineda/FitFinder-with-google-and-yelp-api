@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
 
+
   # GET /users
   # GET /users.json
   def index
@@ -12,7 +13,14 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @myevents = Userevent.where(:userid=> current_user.id)
+  end
+
+  # Takes in event id from link parameter.
+  def bookclass
+    event = Event.find(params[:id])
+    current_user.events << event
+    flash[:alert] = "#{event.name} was added to your calendar."
+    render json: { status: 200, user_id: current_user.id }
   end
 
   # GET /users/new

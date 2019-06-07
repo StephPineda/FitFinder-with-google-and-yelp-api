@@ -15,6 +15,19 @@ export default class Calendar extends Component {
     tasks: {}
   };
 
+  bookClass = (fitEventId) => {
+    this.closeModal()
+
+    axios.post(`/bookclass`, { id: fitEventId }, {  headers: {
+                                                    'X-Requested-With': 'XMLHttpRequest',
+                                                    'X-CSRF-TOKEN': ReactOnRails.authenticityToken()
+                                                  } })
+      .then( response => {
+        if( response.data.status === 200 ){ window.location.href = `/users/${response.data.user_id}` }
+      })
+      .catch( err => console.log( err ) )
+  }
+
   fetchTasks = currentMonth => {
     const monthStart = dateFns.startOfMonth(currentMonth);
     const monthEnd = dateFns.endOfMonth(monthStart);
@@ -73,6 +86,7 @@ export default class Calendar extends Component {
           selectedDate={selectedDate}
           closeModal={this.closeModal}
           dailyTasks={tasks[dateFns.format(selectedDate, "YYYY-MM-DD")] || []}
+          bookClass={this.bookClass}
         />
       </div>
     );

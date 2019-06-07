@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/map', to: 'gyms#map'
+
+  post '/bookclass', to: 'users#bookclass', as:'bookclass'
 end
