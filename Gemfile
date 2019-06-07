@@ -5,6 +5,7 @@ ruby '2.6.3'
 gem 'react_on_rails'
 gem 'hirb'
 gem 'faker'
+gem 'geocoder'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.rc1'

@@ -13,10 +13,11 @@
  *= require_tree .
  *= require_self
  */
- html {
-   scroll-behavior: smooth;
- }
- 
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Nunito";
   letter-spacing: 0.0625em;

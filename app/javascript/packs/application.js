@@ -61,4 +61,14 @@ $(document).on("ready turbolinks:load", function() {
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
+
+  var signup = document.getElementById("marginal");
+  if (signup) {
+    signup.classList.add("animated", "zoomIn");
+  }
+
+  var signin = document.getElementById("form-signin");
+  if (signin) {
+    signin.classList.add("animated", "zoomIn");
+  }
 });

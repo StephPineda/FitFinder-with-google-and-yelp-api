@@ -1,194 +1,184 @@
+<header class="masthead">
+  <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+      <h1 class="mx-auto my-0 text-uppercase">FIT FINDER</h1>
+      <h2 class="text-white-50 mx-auto mt-2 mb-5">
+        "The body achieves what the mind believes"
+      </h2>
+      <a href="#getstarted"  class="btn btn-primary js-scroll-trigger">Get Started</a>
+    </div>
+  </div>
+</header>
 
+<section id="getstarted" class="about-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="searchheader">
+          Find Your Perfect Workout Here!
+        </div>
+        <%= form_with url: gyms_path, local: true, method: 'get' do |f| %>
+          <div class="form-group">
+            <%= f.search_field :search_term, class: 'form-control search-input', placeholder: 'Workout Type...' %>
+            <%= f.number_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
+          </div>
+          <%= f.submit 'Search', class: 'btn btn-primary buttonclass' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container d-flex h-100 align-items-center">
-        <div class="mx-auto text-center">
-          <h1 class="mx-auto my-0 text-uppercase">FIT FINDER</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">
-            "The body achieves what the mind believes"
-          </h2>
-          <a href="#about"  class="btn btn-primary js-scroll-trigger"
-            >Get Started</a
-          >
+<section id="locations" class="projects-section bg-light">
+  <div class="container">
+    <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+      <div class="col-xl-8 col-lg-7">
+        <%= image_tag('miamipic.png', class:"img-fluid mb-3 mb-lg-0" ) %>
+      </div>
+      <div class="col-xl-4 col-lg-5">
+        <div class="featured-text text-center text-lg-left">
+          <h4>MIAMI</h4>
+          <p class="text-black-50 mb-0">
+          </p>
         </div>
       </div>
-    </header>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="searchheader">
-              Find Your Perfect Workout Here!
+    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+      <div class="col-lg-6">
+        <%= image_tag('ftlauderdale.png', class:"img-fluid" ) %>
+      </div>
+      <div class="col-lg-6">
+        <div class="bg-black text-center h-100 project">
+          <div class="d-flex h-100">
+            <div class="project-text w-100 my-auto text-center text-lg-left">
+              <h4 class="text-white">FORT LAUDERDALE</h4>
+              <p class="mb-0 text-white-50"></p>
+              <hr class="d-none d-lg-block mb-0 ml-0" />
             </div>
             <%= form_with url: gyms_path, local: true, method: 'get' do |f| %>
               <div class="form-group">
-                <%= f.search_field :search_term, class: 'form-control search-input', placeholder: 'Workout Type...' %>
-                <%= f.number_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
+                <select class="form-control">
+                  <option value="select a workout">Select a Workout</option>
+                  <option value="Ballet">Ballet</option>
+                  <option value="Karate">Karate</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="MMA">MMA</option>
+                  <option value="Cycling">Cycling</option>
+                  <option value="Gym">Gym</option>
+                </select> 
               </div>
-              <%= f.submit 'Search', class: 'btn-btn-primary buttonclass' %>
+              <div class="form-group">
+                <%= f.text_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
+              </div>
+              <%= f.submit 'Search', class: 'btn btn-primary' %>
             <% end %>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section bg-light">
-      <div class="container">
-        <!-- Featured Project Row -->
-        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-          <div class="col-xl-8 col-lg-7">
-            <%= image_tag('miamipic.png', class:"img-fluid mb-3 mb-lg-0" ) %>
-          </div>
-          <div class="col-xl-4 col-lg-5">
-            <div class="featured-text text-center text-lg-left">
-              <h4>MIAMI</h4>
-              <p class="text-black-50 mb-0">
-                <!-- Grayscale is open source and MIT licensed. This means you can
-                use it for any project - even commercial projects! Download it,
-                customize it, and publish your website! -->
+    <div class="row justify-content-center no-gutters">
+      <div class="col-lg-6">
+        <%= image_tag('westpalmbeach.png', class:"img-fluid" )%>
+      </div>
+      <div class="col-lg-6 order-lg-first">
+        <div class="bg-black text-center h-100 project">
+          <div class="d-flex h-100">
+            <div
+              class="project-text w-100 my-auto text-center text-lg-right"
+            >
+              <h4 class="text-white text-left">WEST PALM BEACH</h4>
+              <p class="mb-0 text-white-50">
               </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project One Row -->
-        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-          <div class="col-lg-6">
-            <%= image_tag('ftlauderdale.png', class:"img-fluid" ) %>
-
-          </div>
-          <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div
-                  class="project-text w-100 my-auto text-center text-lg-left"
-                >
-                  <h4 class="text-white">FORT.LAUDERDALE</h4>
-                  <p class="mb-0 text-white-50">
-                    <!-- An example of where you can put an image of a project, or
-                    anything else, along with a description. -->
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Two Row -->
-        <div class="row justify-content-center no-gutters">
-          <div class="col-lg-6">
-            <%= image_tag('westpalmbeach.png', class:"img-fluid" )%>
-          </div>
-          <div class="col-lg-6 order-lg-first">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div
-                  class="project-text w-100 my-auto text-center text-lg-right"
-                >
-                  <h4 class="text-white">WEST PALM BEACH</h4>
-                  <p class="mb-0 text-white-50">
-                    <!-- Another example of a project with its respective
-                    description. These sections work well responsively as well,
-                    try this theme on a small screen! -->
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 mr-0" />
-                </div>
-              </div>
+              <hr class="d-none d-lg-block mb-0 mr-0" />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Signup Section -->
-    <section id="signup" class="signup-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-lg-8 mx-auto text-center">
-            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-
-            <form class="form-inline d-flex">
-              <input
-                type="email"
-                class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-                id="inputEmail"
-                placeholder="Enter email address..."
-              />
-              <button type="submit" class="btn btn-primary mx-auto">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
+<section id="signup" class="signup-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-lg-8 mx-auto text-center">
+        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+        <form class="form-inline d-flex">
+          <input
+            type="email"
+            class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+            id="inputEmail"
+            placeholder="Enter email address..."
+          />
+          <button type="submit" class="btn btn-primary mx-auto">
+            Subscribe
+          </button>
+        </form>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section class="contact-section bg-black">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">Address</h4>
-                <hr class="my-4" />
-                <div class="small text-black-50">
-                  4923 Lincoln Rd, Miami FL
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-envelope text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">Email</h4>
-                <hr class="my-4" />
-                <div class="small text-black-50">
-                  <a href="#">help@fitfinder.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">Phone</h4>
-                <hr class="my-4" />
-                <div class="small text-black-50">+1 (555) 902-8832</div>
-              </div>
+<section id='contact' class="contact-section bg-black">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">Address</h4>
+            <hr class="my-4" />
+            <div class="small text-black-50">
+              2650 NW 5th Avenue, Miami FL
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="social d-flex justify-content-center">
-          <a href="#" class="mx-2">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="mx-2">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="mx-2">
-            <i class="fab fa-github"></i>
-          </a>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-envelope text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">Email</h4>
+            <hr class="my-4" />
+            <div class="small text-black-50">
+              <a href="#">info@fitfinder.com</a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
-      <div class="container">
-        Copyright &copy; FitFinder 2019
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+            <h4 class="text-uppercase m-0">Phone</h4>
+            <hr class="my-4" />
+            <div class="small text-black-50">+1 (555) 902-8832</div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+
+    <div class="social d-flex justify-content-center">
+      <a href="#" class="mx-2">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="mx-2">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="mx-2">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black small text-center text-white-50">
+  <div class="container">
+    Copyright &copy; FitFinder 2019
+  </div>
+</footer>

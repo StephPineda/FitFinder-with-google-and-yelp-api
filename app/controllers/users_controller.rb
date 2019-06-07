@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
 
+
   # GET /users
   # GET /users.json
   def index
@@ -12,6 +13,14 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+  end
+
+  # Takes in event id from link parameter.
+  def bookclass
+    event = Event.find(params[:id])
+    current_user.events << event
+    flash[:alert] = "#{event.name} was added to your calendar."
+    render json: { status: 200, user_id: current_user.id }
   end
 
   # GET /users/new
@@ -31,6 +40,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        log_in @user
         format.html { redirect_to @user, notice: 'Welcome to the Fit Finder Community!' }
         format.json { render :show, status: :created, location: @user }
       else

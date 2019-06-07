@@ -1,17 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <strong><%= @user.firstname %> <%= @user.lastname %></strong>
-      </h1>
-      <p><strong>Email:</strong><%= @user.email %></p>
-    </section>
-  </aside>
-</div>
-
-<%= link_to 'Logout', logout_path(user_id: @user.id), method: 'delete' %>
-<%= link_to 'Edit', edit_user_path(:user => {:id => @user.id }) %> |
-<%= link_to 'Back', root_url %>
+<div class="clearfix"></div>
+<section class="search-box">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 listing-block">
+        <div id="gym-show">
+          <div class="mediacal" >
+            <div class="user-label">
+              <h1>
+                <%= gravatar_for @user %>
+                <strong><%= @user.firstname %> <%= @user.lastname %></strong>
+              </h1>
+              <%= link_to 'Settings', edit_user_path(:user => {:id => @user.id }) %>
+            </div>
+          </div>
+          <div class="col-md-7 mx-0 px-0 calbox">
+            <h3>Upcoming Classes</h3>
+              <ul>
+                <% @user.events.each do |event| %>
+                  <li><%= event.name %> <%= event.event_start.strftime("%A, %d %b %Y %l:%M %p") %></li>
+                <% end %>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
