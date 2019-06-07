@@ -148,3 +148,44 @@ hgroup h2.lead {
   margin: 0;
   padding-bottom: 10px;
 }
+
+.nav {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.bumper {
+  height: 50px;
+}
+
+#gym-view {
+  padding-top: 60px;
+}
+
+#gym-show {
+  display: flex;
+  flex-direction: row;
+}
+
+.gym-label {
+  width: 100%;
+}
+
+.mediacal {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: stretch;
+}
+
+.calbox {
+  width: 50%;
+}
+
+.gym-show-button {
+  width: 350px;
+}
+
+.eventbtn {
+  background-color: #64a19d;
+}
