@@ -37,7 +37,7 @@ export default class Calendar extends Component {
     );
     const endDate = dateFns.format(dateFns.endOfWeek(monthEnd), "YYYY-MM-DD");
     axios
-      .get(`/calendar.json?start_date=${startDate}&end_date=${endDate}`)
+      .get(`/calendar.json?start_date=${startDate}&end_date=${endDate}&gymId=${this.props.gymId}`)
       .then(response => this.setState({ tasks: response.data, currentMonth }));
   };
 

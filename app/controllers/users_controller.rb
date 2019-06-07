@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        log_in @user
         format.html { redirect_to @user, notice: 'Welcome to the Fit Finder Community!' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -84,7 +85,6 @@ class UsersController < ApplicationController
                                    :lastname,
                                    :email,
                                    :password,
-                                   :password_digest,
                                    :password_confirmation)
     end
 
