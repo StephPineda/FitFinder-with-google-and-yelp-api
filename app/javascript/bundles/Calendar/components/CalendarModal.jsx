@@ -2,28 +2,48 @@ import React from "react";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import dateFns from "date-fns";
 
+
 const CalendarModal = props => (
   <Modal isOpen={props.modalOpen} toggle={props.closeModal}>
     <ModalHeader toggle={props.closeModal}>
       {dateFns.format(props.selectedDate, "dddd, MMMM Do")}
     </ModalHeader>
     <ModalBody>
-      <ul>
-        {props.dailyTasks.map(task => {
+      <table>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.dailyTasks.map((task, index) => {
           return (
-            <li key={task.id}>
+          <tr key={index}>
+            <td key={task.id}>
               <a href={task.location}>
                 {task.name} | {task.event_start}
               </a>
-            </li>
+            </td>
+            <td>
+              <a href="#" >
+                <button  class="btn btn-info btn-sm eventbtn"
+                         value={task.id}
+                         onClick={ (e) => { props.bookClass(e.target.value) } }>
+                Book Now
+                </button>
+              </a>
+            </td>
+          </tr>
           );
         })}
         {props.dailyTasks.length === 0 && (
           <p>
-            <i>No tasks due today</i>
+            <i>No classes scheduled today</i>
           </p>
         )}
-      </ul>
+        </tbody>
+      </table>
     </ModalBody>
   </Modal>
 );

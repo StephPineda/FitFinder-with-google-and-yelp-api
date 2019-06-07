@@ -2,7 +2,7 @@
   <div class="col-lg-10 col-xl-9 mx-auto">
     <div class="card card-signin flex-row my-5" id='form-signin'>
       <div class="card-img-left d-none d-md-flex">
-        
+
           <!-- Background image for card set in CSS! -->
     </div>
     <div class="card-body">
@@ -36,35 +36,35 @@
           </div>
 
           <div class="form-label-group">
-            <%= form.password_field :password_digest, class: 'form-control', placeholder: 'password', required: true %>
-            <%= form.label :password_digest, 'Password' %>
+            <%= form.password_field :password, class: 'form-control', placeholder: 'password', required: true %>
+            <%= form.label :password, 'Password' %>
           </div>
 
           <div class="form-label-group">
           <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Password', required: true %>
           <%= form.label :password_confirmation, 'Confirm password' %>
         </div>
-        
+
           <div class="actions">
             <%= form.submit 'Register', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
-            
-            
+
+
           </div>
           <hr class="my-4">
 
           <%
 =begin%>
-sign in with google and facebook buttons 
+sign in with google and facebook buttons
 <%
 =end%>
             <%
 =begin%>
-<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button> 
+<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
 <%
 =end%>
             <%
 =begin%>
-<button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button> 
+<button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
 <%
 =end%>
           <% end %>
