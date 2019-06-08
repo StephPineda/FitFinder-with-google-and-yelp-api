@@ -1,5 +1,6 @@
 class Gym < ApplicationRecord
   has_many :events, dependent: :delete_all
+  has_many :favorites
   include SearchableByName
 
   scope :by_zipcode, -> ( zipcode ){ where('address iLIKE ?', "%#{zipcode}%") }
