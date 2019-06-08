@@ -10,7 +10,7 @@
                 <%= gravatar_for @user %>
                 <strong><%= @user.firstname %> <%= @user.lastname %></strong>
               </h1>
-              <%= link_to 'Settings', edit_user_path(:user => {:id => @user.id }) %>
+              <%= link_to 'Settings', edit_user_path(@user) %>
             </div>
           </div>
           <div class="col-md-7 mx-0 px-0 calbox">
