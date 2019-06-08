@@ -19,8 +19,18 @@
         </div>
         <%= form_with url: gyms_path, local: true, method: 'get' do |f| %>
           <div class="form-group">
-            <%= f.search_field :search_term, class: 'form-control search-input', placeholder: 'Workout Type...' %>
-            <%= f.number_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
+            <div class="form-group">
+                <select class="form-control">
+                  <option value="select a workout">Select a Workout</option>
+                  <option value="Ballet">Ballet</option>
+                  <option value="Karate">Karate</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="MMA">MMA</option>
+                  <option value="Cycling">Cycling</option>
+                  <option value="Gym">Gym</option>
+                </select> 
+              </div>
+              <%= f.number_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
           </div>
           <%= f.submit 'Search', class: 'btn btn-primary buttonclass' %>
         <% end %>
@@ -57,21 +67,8 @@
               <hr class="d-none d-lg-block mb-0 ml-0" />
             </div>
             <%= form_with url: gyms_path, local: true, method: 'get' do |f| %>
-              <div class="form-group">
-                <select class="form-control">
-                  <option value="select a workout">Select a Workout</option>
-                  <option value="Ballet">Ballet</option>
-                  <option value="Karate">Karate</option>
-                  <option value="Yoga">Yoga</option>
-                  <option value="MMA">MMA</option>
-                  <option value="Cycling">Cycling</option>
-                  <option value="Gym">Gym</option>
-                </select> 
-              </div>
-              <div class="form-group">
-                <%= f.text_field :zipcode, class: 'form-control search-input', placeholder: 'Zipcode...' %>
-              </div>
-              <%= f.submit 'Search', class: 'btn btn-primary' %>
+              
+             
             <% end %>
           </div>
         </div>

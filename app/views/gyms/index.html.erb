@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header id= "resultheader" class="masthead" style="min-height: 230px;">
 <!-- <iframe width="1280" height="720" src="https://www.youtube.com/embed/9VlfxuMJxTw?autoplay=1&loop=1&mute=1&%color=white&iv_load_policy=3&playlist=9VlfxuMJxTw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -11,6 +12,22 @@
 
 <!-- <div class="clearfix"></div> -->
 <section class="search-box" id="gym-map-container">
+=======
+<section class="head">
+  <div class="container">
+
+  </div>
+</section>
+<hgroup class="mb20">
+  <div class="lead">
+    <strong class="lead"><%= @gyms.count %></strong>
+    <%= 'Result'.pluralize(@gyms.count) %> <%= @gyms.count == 1 ? 'for' : 'for' %> 
+    <strong class="lead"><%= @terms %></strong>
+  </div>
+</hgroup>
+<div class="clearfix"></div>
+<section class="search-box">
+>>>>>>> saving changes
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 listing-block">
@@ -40,11 +57,14 @@
             <div class="title"><%= link_to gym.name, gym %></div>
             <div class="price">$ <%= (gym.price_in_cents).round(2) %></div>
             <div class="stats">
+<<<<<<< HEAD
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star"></span>
               <span class="fa fa-star"></span>
+=======
+>>>>>>> saving changes
               <span><i class="fa fa-arrows-alt"></i><%= link_to gym.phone_number, "tel:#{gym.phone_number}"%></span>
             </div>
             <div class="address"><%= gym.address %></div>
