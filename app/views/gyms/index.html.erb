@@ -48,7 +48,11 @@
       <div class="col-md-7 map-box mx-0 px-0">
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
-        <%= react_component 'Map', props: { position: @position, gyms: @coordinates }, prerender: false %>
+        <%= react_component 'Map', props: {
+                                            zipcode: params[:zipcode],
+                                            searchTerm: params[:search_term]
+                                          },
+                                          prerender: false %>
       </div>
     </div>
   </section>
