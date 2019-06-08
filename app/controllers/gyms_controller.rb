@@ -4,10 +4,12 @@ class GymsController < ApplicationController
   # GET /gyms
   # GET /gyms.json
   def index
+    #@gym = Gym.find(params[:id])
     @gyms = Gym.all
     @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
     @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
     @terms = [params[:search_term], params[:zipcode]].join(' ')
+    
   end
 
   def index_coords

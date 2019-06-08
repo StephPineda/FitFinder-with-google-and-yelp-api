@@ -1,61 +1,49 @@
-
-<!--
-  <div class=" container">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="gravatar_edit">
-        <%#= gravatar_for @user %>
-        <a href="http://gravatar.com/emails" target="_blank">change</a>
-      </div>
-    </div>
-  </div> -->
   <div class="row">
     <div class="col-lg-10 col-xl-9 mx-auto">
       <div class="card card-signin flex-row my-5 gym-round" id='form-signin'>
         <div class="card-img-left d-none d-md-flex">
-
-
         </div>
         <div class="card-body">
           <h5 class="card-title text-center">Edit Account</h5>
-          <%= gravatar_for @user %>
-          <a href="http://gravatar.com/emails" target="_blank">change</a>
-          <%= form_with(model: @user, local: true, class: 'form-signin') do |form| %>
-            <% if @user.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-                <ul>
-                  <% user.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                  <% end %>
-                </ul>
+          <div id="profileupdate">
+            <div id="profilepic">
+              <%= gravatar_for @user , class: "user-image"%>
+            </div>
+            <a href="http://gravatar.com/emails" target="_blank">Change Photo</a>
+          </div>
+          <div id="change-settings">
+            <%= form_with(model: @user, local: true, class: 'form-signin') do |form| %>
+              <% if @user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                  <ul>
+                    <% user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="form-label-group">
+                <%= form.text_field :firstname, class: 'form-control', placeholder: 'Username', required: true, autofocus: true %>
+                <%= form.label :firstname, 'First Name' %>
+              </div>
+              <div class="form-label-group">
+                <%= form.text_field :lastname, class: 'form-control', placeholder: 'lastname', required: true %>
+                <%= form.label :lastname, 'Last Name' %>
+              </div>
+              <div class="form-label-group">
+                <%= form.text_field :email, class: 'form-control', placeholder: 'Email Address', required: true %>
+                <%= form.label :email, 'Email' %>
+              </div>
+              <div class="form-label-group">
+                <%= form.password_field :password, class: 'form-control', placeholder: 'password', required: true %>
+                <%= form.label :password, 'Password' %>
+              </div>
+              <div class="actions">
+                <%= form.submit 'Save Changes', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
               </div>
             <% end %>
-
-            <div class="form-label-group">
-              <%= form.text_field :firstname, class: 'form-control', placeholder: 'Username', required: true, autofocus: true %>
-              <%= form.label :firstname, 'First Name' %>
-            </div>
-
-            <div class="form-label-group">
-              <%= form.text_field :lastname, class: 'form-control', placeholder: 'lastname', required: true %>
-              <%= form.label :lastname, 'Last Name' %>
-            </div>
-
-            <div class="form-label-group">
-              <%= form.text_field :email, class: 'form-control', placeholder: 'Email Address', required: true %>
-              <%= form.label :email, 'Email' %>
-            </div>
-
-            <div class="form-label-group">
-              <%= form.password_field :password, class: 'form-control', placeholder: 'password', required: true %>
-              <%= form.label :password, 'Password' %>
-            </div>
-
-            <div class="actions">
-              <%= form.submit 'Register', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
-            </div>
-          <% end %>
-
+          </div>
         </div>
       </div>
     </div>

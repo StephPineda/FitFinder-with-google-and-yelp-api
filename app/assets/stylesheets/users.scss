@@ -198,3 +198,51 @@ li {
 .user-label {
   width: 100%;
 }
+
+.contain-user{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.usersaved{
+  display: flex;
+  min-height: 50%;
+  flex-direction: column;
+}
+
+#gym-show{
+  display: flex;
+  height: 100%;
+}
+
+#change-settings{
+  display: flex;
+
+}
+
+#profileupdate{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#profileupdate{
+  text-decoration: none;
+  color: black;
+}
+
+#profilepic{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+
+#usercontainer{
+  margin-top: 80px;
+}
