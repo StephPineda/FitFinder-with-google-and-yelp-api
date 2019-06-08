@@ -20,14 +20,15 @@
             <p>
               $ <%= @gym.price_in_cents %>
             </p>
-            <% fave = Favorite.find_by(user_id: current_user.id, gym_id: @gym.id) %>
-            <% if fave %>
-              <%= link_to "Remove from Favorites", favorite_path(id: fave.id), method: 'delete', class: "btn btn-primary gym-show-button" %>
-            <% else %>
-              <%= form_with model: current_user.favorites.new, url: favorites_path do |f| %>
-                <%= f.hidden_field :user_id, value: current_user.id %>
-                <%= f.hidden_field :gym_id, value: @gym.id %>
-                <%= f.submit "Add to Favorites", class: "btn btn-primary gym-show-button" %>
+            <% if current_user %>
+              <% if @fave %>
+                <%= link_to "Remove from Favorites", favorite_path(id: @fave.id), method: 'delete', class: "btn btn-primary gym-show-button" %>
+              <% else %>
+                <%= form_with model: current_user.favorites.new, url: favorites_path do |f| %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :gym_id, value: @gym.id %>
+                  <%= f.submit "Add to Favorites", class: "btn btn-primary gym-show-button" %>
+                <% end %>
               <% end %>
             <% end %>
           </div>

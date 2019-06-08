@@ -37,6 +37,7 @@ class GymsController < ApplicationController
   # GET /gyms/1.json
   def show
     @gym = Gym.find(params[:id])
+    @fave = Favorite.find_by(user_id: current_user.id, gym_id: @gym.id) if current_user
   end
 
   # GET /gyms/new

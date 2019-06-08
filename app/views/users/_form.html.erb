@@ -6,7 +6,7 @@
 
     </div>
     <div class="card-body">
-      <h5 class="card-title text-center">Register</h5>
+      <h5 class="card-title text-center">Sign Up</h5>
         <%= form_with(model: user, local: true, class: 'form-signin') do |form| %>
           <% if user.errors.any? %>
             <div id="error_explanation">
@@ -45,7 +45,7 @@
         </div>
 
           <div class="actions">
-            <%= form.submit 'Register', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
+            <%= form.submit 'Sign Up', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
 
 
           </div>
