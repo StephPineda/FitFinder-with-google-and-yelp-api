@@ -1,4 +1,4 @@
-class FavoriteGymsController < ApplicationController
+class FavoritesController < ApplicationController
 
   def create
     if Favorite.create(favorited: @gym, user: current_user)
@@ -16,5 +16,5 @@ class FavoriteGymsController < ApplicationController
   def set_project
     @gym = Gym.find(params[:gym_id] || params[:id])
   end
-  
+
 end
