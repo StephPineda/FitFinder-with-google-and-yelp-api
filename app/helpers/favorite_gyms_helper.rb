@@ -1,0 +1,2 @@
+module FavoriteGymsHelper
+end
