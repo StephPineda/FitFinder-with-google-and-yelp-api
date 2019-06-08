@@ -174,7 +174,7 @@ header {
   position: relative;
   background-color: black;
   height: 60vh;
-  min-height: 25rem;
+  // min-height: 25rem;
   width: 100%;
   overflow: hidden;
 }
@@ -340,6 +340,6 @@ iframe {
     border: none;         /* Reset default border */
     height: 103vh;        /* Viewport-relative units */
     width: 100vw;
-    pointer-events: enable; 
-    
+    pointer-events: enable;
+
 }

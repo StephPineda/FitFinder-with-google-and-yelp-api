@@ -4,6 +4,15 @@ class GymsController < ApplicationController
   # GET /gyms
   # GET /gyms.json
   def index
+    #@gym = Gym.find(params[:id])
+    @gyms = Gym.all
+    @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
+    @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
+    @terms = [params[:search_term], params[:zipcode]].join(' ')
+    
+  end
+
+  def index_coords
     @gyms = Gym.all
     @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
     @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
@@ -23,13 +32,14 @@ class GymsController < ApplicationController
         address: gym.address
       }
     end
-
+    render json: @coordinates
   end
 
   # GET /gyms/1
   # GET /gyms/1.json
   def show
     @gym = Gym.find(params[:id])
+    @fave = Favorite.find_by(user_id: current_user.id, gym_id: @gym.id) if current_user
   end
 
   # GET /gyms/new

@@ -167,10 +167,6 @@ iframe {
   padding-bottom: 50px;
 }
 
-.bumper {
-  height: 50px;
-}
-
 #gym-view {
   padding-top: 60px;
 }
@@ -201,4 +197,14 @@ iframe {
 
 .eventbtn {
   background-color: #64a19d;
+}
+
+#gym-map-container{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#resultheader{
+  color: white;
+  background-color: #343a40;
+  height: 200px;
 }

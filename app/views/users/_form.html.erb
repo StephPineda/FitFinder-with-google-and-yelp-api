@@ -3,15 +3,14 @@
     <div class="card card-signin flex-row my-5 gym-round" id='form-signin'>
       <div class="card-img-left d-none d-md-flex">
 
-          <!-- Background image for card set in CSS! -->
+
     </div>
     <div class="card-body">
-      <h5 class="card-title text-center">Register</h5>
+      <h5 class="card-title text-center">Sign Up</h5>
         <%= form_with(model: user, local: true, class: 'form-signin') do |form| %>
           <% if user.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
               <ul>
                 <% user.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -46,7 +45,7 @@
         </div>
 
           <div class="actions">
-            <%= form.submit 'Register', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
+            <%= form.submit 'Sign Up', class: 'btn btn-lg btn-primary btn-block text-uppercas' %>
 
 
           </div>
