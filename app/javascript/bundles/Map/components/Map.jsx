@@ -5,18 +5,19 @@ class Map extends Component{
 
   state = {
     positionCoords: [],
-    pins: []
+    pins: [],
+    map: {}
   }
 
   drawMap = () => {
     let { positionCoords } = this.state
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ3ltZmluZGVyIiwiYSI6ImNqdnp1Znh3bzA0YXIzeW9kNzhqMXJqZnQifQ.UyRzS7V1X-1vRSfMWwMJ6Q';
-    var map = new mapboxgl.Map({
+    let map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',
       zoom: 13,
       center: positionCoords,
-    });
+    })
 
     map.addControl(new mapboxgl.GeolocateControl({
       positionOptions: { enableHighAccuracy: true },
@@ -36,7 +37,17 @@ class Map extends Component{
   fetchPins = () => {
     fetch(`/gyms_pins?search_term=${this.props.searchTerm}&zipcode=${this.props.zipcode}`)
       .then( res => res.json() )
-      .then( pins => this.setState({ pins }))
+      .then( pins =>  this.setState({ pins },
+                        () => {
+                          pins.map( gym => {
+                            let marker = new mapboxgl.Marker()
+                            marker.setPopup(
+                              new mapboxgl.Popup().setHTML(`<p>${gym.name}</p><br/><p>${gym.address}</p>`).addTo(map)
+                            )
+                            marker.setLngLat( gym.coords ).addTo( map )
+                          })
+                        }
+                      ))
   }
 
   componentDidMount(){

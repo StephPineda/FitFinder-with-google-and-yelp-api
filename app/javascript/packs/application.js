@@ -71,4 +71,7 @@ $(document).on("ready turbolinks:load", function() {
   if (signin) {
     signin.classList.add("animated", "zoomIn");
   }
+
+  var toast = $('#bs-toast').toast('show') 
+
 });
