@@ -1,18 +1,27 @@
-<div id="toppage"></div>
+<div id="toppage">
+<%=image_tag("loladominguez1.png", height: '250', width: '250', :class => "avatar gravatar2")%>
+
+
+ <%
+=begin%>
+ <%= gravatar_for @user, :class => "avatar"%> 
+<%
+=end%>
+</div>
 <section class="search-box">
   <div class="container-fluid" id="usercontainer">
     <div class="row">
       <div class="col-md-12 listing-block">
-        <div id="gym-show">
+      
           <div class="mediacal" >
             <div class="user-label">
               <h1>
-                <%= gravatar_for @user %>
+             
                 <strong><%= @user.firstname %> <%= @user.lastname %></strong>
               </h1>
               <%= link_to 'Settings', edit_user_path(@user) %>
             </div>
-          </div>
+          </div>  
           <div class="col-md-7 mx-0 px-0 calbox">
             <div class="contain-user">
               <div class="usersaved">
@@ -33,7 +42,7 @@
               </div>
           </div>
         </div>
-      </div>
+
     </div>
   </div>
 </section> 
