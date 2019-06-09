@@ -1,6 +1,3 @@
-// Place all the styles related to the Gyms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
 
 .lead {
@@ -28,15 +25,6 @@
   color: #fff;
   font-weight: bold;
 }
-
-// body {
-//   background: #24c6dc;
-//   /* fallback for old browsers */
-//   background: -webkit-linear-gradient(to bottom, #514a9d, #24c6dc);
-//   /* Chrome 10-25, Safari 5.1-6 */
-//   background: linear-gradient(to bottom, #514a9d, #24c6dc);
-//   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-// }
 
 .head {
   float: left;
@@ -153,7 +141,6 @@ hgroup h2.lead {
   color: orange;
 }
 
-
 iframe {
     display: block;       /* iframes are inline by default */
     background: #000;
@@ -203,8 +190,29 @@ iframe {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 #resultheader{
-  color: white;
   background-color: #343a40;
-  height: 200px;
+  height: 100px;
+  font-size: 10rem;
+  color: white;
+  text-align: center;
+  font-family: "Varela Round";
+  background-image: none;
+  margin-bottom: 55px;
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+h1 #resultheader {
+  color: -webkit-linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  line-height: 8rem;
+  letter-spacing: 0.6rem;
+  webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+#resultmasthead{
+  padding-bottom: 0;
+  min-height: 10rem;
 }
