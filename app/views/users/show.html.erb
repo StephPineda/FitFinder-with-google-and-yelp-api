@@ -19,7 +19,7 @@
                 <h3>Upcoming Classes</h3>
                   <ul>
                     <% @user.events.each do |event| %>
-                      <li><%= event.name %> <%= event.event_start.strftime("%A, %d %b %Y %l:%M %p") %></li>
+                      <li><%= link_to event.name, event.gym %> <%= event.event_start.strftime("%A, %d %b %Y %l:%M %p") %></li>
                     <% end %>
                   </ul>
               </div>
