@@ -153,13 +153,12 @@ hgroup h2.lead {
   color: orange;
 }
 
-
 iframe {
-    display: block;       /* iframes are inline by default */
-    background: #000;
-    border: none;         /* Reset default border */
-    height: 103vh;        /* Viewport-relative units */
-    width: 100vw;
+  display: block; /* iframes are inline by default */
+  background: #000;
+  border: none; /* Reset default border */
+  height: 103vh; /* Viewport-relative units */
+  width: 100vw;
 }
 
 .nav {
@@ -199,12 +198,26 @@ iframe {
   background-color: #64a19d;
 }
 
-#gym-map-container{
+#gym-map-container {
   margin-top: 0;
   margin-bottom: 0;
 }
-#resultheader{
+#resultheader {
   color: white;
   background-color: #343a40;
   height: 200px;
+}
+
+#gymshowcontainer {
+  padding: 0;
+  margin: 0;
+}
+
+#calendargymcontainer {
+  margin-bottom: 0;
+  padding: 0;
+}
+#singlegymcontainer {
+  margin-top: 0;
+  margin-bottom: 0;
 }
