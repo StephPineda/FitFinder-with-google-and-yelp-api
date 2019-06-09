@@ -12,16 +12,16 @@
   <div class="container-fluid" id="usercontainer">
     <div class="row">
       <div class="col-md-12 listing-block">
-      
+
           <div class="mediacal" >
             <div class="user-label">
               <h1>
-             
+
                 <strong><%= @user.firstname %> <%= @user.lastname %></strong>
               </h1>
               <%= link_to 'Settings', edit_user_path(@user) %>
             </div>
-          </div>  
+          </div>
           <div class=" mx-0 px-0 calbox">
             <div class="contain-user">
               <div class="usersaved">
@@ -40,9 +40,9 @@
                   <% end %>
                 </ul>
               </div>
+            </div>
           </div>
-        </div>
-
+          
+      </div>
     </div>
-  </div>
-</section> 
+  </section>
