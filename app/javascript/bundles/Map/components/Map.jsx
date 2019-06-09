@@ -6,45 +6,54 @@ class Map extends Component{
   state = {
     positionCoords: [],
     pins: [],
-    map: {}
   }
 
   drawMap = () => {
     let { positionCoords } = this.state
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ3ltZmluZGVyIiwiYSI6ImNqdnp1Znh3bzA0YXIzeW9kNzhqMXJqZnQifQ.UyRzS7V1X-1vRSfMWwMJ6Q';
-    let map = new mapboxgl.Map({
+    let mapbox = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',
       zoom: 13,
       center: positionCoords,
     })
 
-    map.addControl(new mapboxgl.GeolocateControl({
+    mapbox.addControl(new mapboxgl.GeolocateControl({
       positionOptions: { enableHighAccuracy: true },
       trackUserLocation: true,
       showUserLocation: true
     }))
 
-    this.state.pins.map( gym => {
-      let marker = new mapboxgl.Marker()
-        marker.setPopup(
-          new mapboxgl.Popup().setHTML(`<p>${gym.name}</p><br/><p>${gym.address}</p>`).addTo(map)
-        )
-      marker.setLngLat( gym.coords ).addTo( map )
-    })
+    return mapbox
   }
 
-  fetchPins = () => {
+  // fitToBounds = (markers, mapbox) => {
+  //   let bounds = new mapboxgl.LngLatBounds();
+  //
+  //   markers.features.forEach(function(feature) {
+  //       bounds.extend(feature.geometry.coordinates);
+  //   });
+  //
+  //   mapbox.fitBounds(bounds);
+  // }
+
+  fetchPins = mapbox => {
     fetch(`/gyms_pins?search_term=${this.props.searchTerm}&zipcode=${this.props.zipcode}`)
       .then( res => res.json() )
       .then( pins =>  this.setState({ pins },
                         () => {
-                          pins.map( gym => {
+                          let bounds = new mapboxgl.LngLatBounds()
+                          pins.forEach( gym => {
+                            if( gym.coords.length === 0 ){ return false }
                             let marker = new mapboxgl.Marker()
+                            marker.setLngLat( gym.coords )
                             marker.setPopup(
-                              new mapboxgl.Popup().setHTML(`<p>${gym.name}</p><br/><p>${gym.address}</p>`).addTo(map)
+                              new mapboxgl.Popup().setHTML(`<p>${gym.name}</p><br/><p>${gym.address}</p>`)
                             )
-                            marker.setLngLat( gym.coords ).addTo( map )
+                            marker.addTo( mapbox )
+                            bounds = bounds.extend( new mapboxgl.LngLat(gym.coords[0], gym.coords[1]) )
+                            mapbox.fitBounds( bounds )
+                            return marker
                           })
                         }
                       ))
@@ -58,8 +67,8 @@ class Map extends Component{
                     },
                     () => {
                       console.log(this.state.positionCoords)
-                      this.drawMap()
-                      this.fetchPins()
+                      let mapbox = this.drawMap()
+                      this.fetchPins( mapbox )
                     })
     })
   }
@@ -83,9 +92,6 @@ class Map extends Component{
       </React.Fragment>
     )
   }
-  componentWillUnmount() {
-   this.map.remove()
- }
 }
 
 export default Map
