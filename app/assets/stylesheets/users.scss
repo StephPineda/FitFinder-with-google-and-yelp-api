@@ -201,9 +201,10 @@ li {
 
 .contain-user {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
+  justify-content: space-around;
 }
 
 .usersaved {
