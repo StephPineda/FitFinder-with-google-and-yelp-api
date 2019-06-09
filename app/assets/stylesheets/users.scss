@@ -205,10 +205,23 @@ li {
   height: 100%;
   width: 100%;
   justify-content: space-around;
+  margin-top: 10rem;
+}
+
+.usersaved2 {
+  display: flex;
+  min-height: 50%;
+  flex-direction: row;
+  width: 50%;
+  flex-wrap: wrap;
+}
+.usersaved3 {
+  display: flex;
+  min-height: 50%;
+  flex-direction: column;
 }
 
 .usersaved {
-  display: flex;
   min-height: 50%;
   flex-direction: column;
 }
@@ -268,4 +281,6 @@ li {
   bottom: 0%;
   left: 42%;
   border-radius: 50%;
+  border-style: solid;
+  border-color: white;
 }
