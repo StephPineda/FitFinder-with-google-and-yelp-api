@@ -184,6 +184,7 @@ iframe {
 
 .gym-show-button {
   width: 350px;
+  margin-left: 10rem !important;
 }
 
 .eventbtn {
@@ -195,7 +196,7 @@ iframe {
   margin-bottom: 0;
 }
 
-#resultheader{
+#resultheader {
   background-color: #343a40;
   height: 100px;
   font-size: 10rem;
@@ -209,14 +210,17 @@ iframe {
 }
 
 h1 #resultheader {
-  color: -webkit-linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  color: -webkit-linear-gradient(
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0)
+  );
   line-height: 8rem;
   letter-spacing: 0.6rem;
   webkit-text-fill-color: transparent;
   font-weight: 500;
 }
 
-#resultmasthead{
+#resultmasthead {
   padding-bottom: 0;
   min-height: 10rem;
 }
@@ -238,7 +242,7 @@ h1 #resultheader {
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.33%;
+
   padding: 15px;
 }
 
@@ -251,15 +255,26 @@ h1 #resultheader {
 b,
 .text-white {
   color: white;
-  margin-left: 80px;
+  margin-left: 30%;
 }
 
 .gymlabel-font {
   font-weight: lighter;
   font-size: 25px;
   font-family: Varela Round;
-  margin-left: 80px;
+  margin-left: 50%;
 }
 .img_tag {
-  margin-left: 80px;
+  margin-left: 90px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left: 20%;
+}
+.marginal {
+  margin-left: 10rem;
+  font-size: 3rem;
+  color: white;
 }

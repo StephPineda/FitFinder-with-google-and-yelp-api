@@ -15,23 +15,30 @@
            
            <div class="column" id= "fontstylecolumn"> 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-            <div class="gym-label container"></div>
-              <h1><%= @gym.name %></h1>
+            <div class="gym-label"></div>
+              
+              <h1 class="marginal"><%= @gym.name %></h1>
                 <div class= "img_tag" >
                 <%= image_tag Gym::IMGS.sample, width:"420px" %>
                 </div>
             </div>
             <p>
-              <strong class="text-white gymlabel-font ">Address:</strong>
+              
               <div class="text-white ">
-              <%= @gym.address %>
+              <div>
+               <span>
+               <%= @gym.address %><span> </span><%= @gym.phone_number %>
+
+                </span>
+
+              </div>
+              
+              
               </div>
               </p>
             <p>
-              <strong class="text-white gymlabel-font">Phone number:</strong>
-              <div class="text-white ">
-              <%= @gym.phone_number %>
-              </div>
+              
+             
             </p>
             <p class="text-white gymlabel-font">
               $ <%= @gym.price_in_cents %>
