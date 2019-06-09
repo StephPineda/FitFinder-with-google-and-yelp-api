@@ -199,30 +199,29 @@ li {
   width: 100%;
 }
 
-.contain-user{
+.contain-user {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
 }
 
-.usersaved{
+.usersaved {
   display: flex;
   min-height: 50%;
   flex-direction: column;
 }
 
-#gym-show{
+#gym-show {
   display: flex;
   height: 100%;
 }
 
-#change-settings{
+#change-settings {
   display: flex;
-
 }
 
-#profileupdate{
+#profileupdate {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -231,18 +230,21 @@ li {
   justify-content: space-around;
 }
 
-#profileupdate{
+#profileupdate {
   text-decoration: none;
   color: black;
 }
 
-#profilepic{
+#profilepic {
   display: flex;
   flex-direction: column;
   width: 50%;
   align-items: center;
 }
 
-#usercontainer{
-  margin-top: 80px;
+#toppage {
+  height: 80vh;
+  background-image: url("https://images.pexels.com/photos/2196138/pexels-photo-2196138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: center;
 }
