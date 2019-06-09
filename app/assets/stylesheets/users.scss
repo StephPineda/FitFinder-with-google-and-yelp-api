@@ -284,3 +284,7 @@ li {
   border-style: solid;
   border-color: white;
 }
+#cardholder {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}

@@ -39,23 +39,22 @@
                   </ul>
               </div>
               <div class="usersaved">
-                <h3>Favorite Gyms</h3>
-
+              <h3>Favorite Gyms</h3>
+              <div id="cardholder">
                   <% @user.gyms.each do |gym| %>
                   <div class="card" style="width: 18rem;">
                     <%= image_tag Gym::IMGS[0], class: 'card-img-top' %>
                     <div class="card-body">
                       <h5 class="card-title"><%= link_to gym.name, gym %></h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-primary">See classes available</a>
                     </div>
                   </div>
                   <% end %>
-
+                </div>
               </div>
             </div>
           </div>
-          
       </div>
     </div>
   </section>
