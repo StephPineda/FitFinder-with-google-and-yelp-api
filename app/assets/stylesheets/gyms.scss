@@ -29,15 +29,6 @@
   font-weight: bold;
 }
 
-// body {
-//   background: #24c6dc;
-//   /* fallback for old browsers */
-//   background: -webkit-linear-gradient(to bottom, #514a9d, #24c6dc);
-//   /* Chrome 10-25, Safari 5.1-6 */
-//   background: linear-gradient(to bottom, #514a9d, #24c6dc);
-//   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-// }
-
 .head {
   float: left;
   width: 100%;
@@ -157,8 +148,12 @@ iframe {
   display: block; /* iframes are inline by default */
   background: #000;
   border: none; /* Reset default border */
-  height: 103vh; /* Viewport-relative units */
-  width: 100vw;
+  height: 105vh; /* Viewport-relative units */
+  width: 105vw;
+  margin-left: 0em;
+}
+#bookclass {
+  color: white;
 }
 
 .nav {
@@ -211,6 +206,7 @@ iframe {
 #gymshowcontainer {
   padding: 0;
   margin: 0;
+  background-color: #343a40;
 }
 
 #calendargymcontainer {
@@ -220,4 +216,32 @@ iframe {
 #singlegymcontainer {
   margin-top: 0;
   margin-bottom: 0;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+b,
+.text-white {
+  color: white;
+  margin-left: 80px;
+}
+
+.gymlabel-font {
+  font-weight: lighter;
+  font-size: 25px;
+  font-family: Varela Round;
+  margin-left: 80px;
+}
+.img_tag {
+  margin-left: 80px;
 }

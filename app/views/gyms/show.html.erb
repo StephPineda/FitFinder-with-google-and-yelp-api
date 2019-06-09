@@ -3,7 +3,7 @@
 <div class="container h-100">
     <div class="d-flex h-100 text-center align-items-center">
     <div class="w-100 text-white">
-     <h1 class="display-3">Book your class today!</h1>
+     <div class="display-3" id=bookclass>Book your class today!</div>
     </div>
 </header>
 <section class="search-box" id="singlegymcontainer">
@@ -12,21 +12,32 @@
       <div class="col-md-12 listing-block" id="gymshowcontainer">
         <div id="gym-show">
           <div class="mediacal container" >
-            <div class="gym-label">
+           
+           <div class="column" id= "fontstylecolumn"> 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+            <div class="gym-label container"></div>
               <h1><%= @gym.name %></h1>
-              <%= image_tag Gym::IMGS.sample, width:"300px" %>
+                <div class= "img_tag" >
+                <%= image_tag Gym::IMGS.sample, width:"420px" %>
+                </div>
             </div>
             <p>
-              <strong>Address:</strong>
+              <strong class="text-white gymlabel-font ">Address:</strong>
+              <div class="text-white ">
               <%= @gym.address %>
-            </p>
+              </div>
+              </p>
             <p>
-              <strong>Phone number:</strong>
+              <strong class="text-white gymlabel-font">Phone number:</strong>
+              <div class="text-white ">
               <%= @gym.phone_number %>
+              </div>
             </p>
-            <p>
+            <p class="text-white gymlabel-font">
               $ <%= @gym.price_in_cents %>
             </p>
+
+            <div></div>
             <% if current_user %>
               <% if @fave %>
                 <%= link_to "Remove from Favorites", favorite_path(id: @fave.id), method: 'delete', class: "btn btn-primary gym-show-button" %>
