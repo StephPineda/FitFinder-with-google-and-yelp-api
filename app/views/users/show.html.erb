@@ -1,22 +1,13 @@
 <div id="toppage">
 <%=image_tag("loladominguez1.png", height: '280', width: '290', :class => "avatar gravatar2")%>
 <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
-
- <%
-=begin%>
- <%= gravatar_for @user, :class => "avatar"%> 
-<%
-=end%>
 </div>
 <section class="search-box">
-  <div class="container-fluid" id="usercontainer">
     <div class="row">
       <div class="col-md-12 listing-block">
-
           <div class="mediacal" >
             <div class="user-label">
               <h1>
-                
                 <strong><%= @user.firstname %> <%= @user.lastname %></strong>
               </h1>
               <%= link_to 'Settings', edit_user_path(@user) %>
@@ -28,13 +19,12 @@
                 <h3>Upcoming Classes</h3>
                   <ul>
                     <% @user.events.each do |event| %>
-                    <div class="card animated bounceInLeft" style="width: 18rem;">
+                    <div class="card animated bounceInLeft delay-3s" style="width: 18rem;">
                       <div class="card-body">
-                        <h5 class="card-title"><%= event.name %></h5>
+                        <h5 class="card-title"><%= link_to event.name, event.gym %></h5>
                         <p class="card-text"><%= event.event_start.strftime("%A, %d %b %Y %l:%M %p") %></p>
                       </div>
                     </div>
-
                     <% end %>
                   </ul>
               </div>
@@ -42,7 +32,7 @@
               <h3>Favorite Gyms</h3>
               <div id="cardholder">
                   <% @user.gyms.each do |gym| %>
-                  <div class="card animated bounceInRight" style="width: 18rem;">
+                  <div class="card animated bounceInRight delay-3s" style="width: 18rem;">
                     <%= image_tag Gym::IMGS.sample, class: 'card-img-top'%>
                     <div class="card-body">
                       <h5 class="card-title"><%= link_to gym.name, gym %></h5>
