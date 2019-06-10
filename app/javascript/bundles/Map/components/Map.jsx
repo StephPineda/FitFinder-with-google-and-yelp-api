@@ -38,17 +38,19 @@ class Map extends Component{
   // }
 
   fetchPins = mapbox => {
-    fetch(`/gyms_pins?search_term=${this.props.searchTerm}&zipcode=${this.props.zipcode}`)
+    let url = `gyms_pins?${ this.props.searchTerm ? `search_term=${this.props.searchTerm}&` : ''}${this.props.zipcode ? `zipcode=${this.props.zipcode}` : '' }`
+    console.log("the pins url::", url)
+    fetch(url)
       .then( res => res.json() )
       .then( pins =>  this.setState({ pins },
                         () => {
                           let bounds = new mapboxgl.LngLatBounds()
                           pins.forEach( gym => {
-                            if( gym.coords.length === 0 ){ return false }
+                            if( gym === null ){ return false }
                             let marker = new mapboxgl.Marker()
                             marker.setLngLat( gym.coords )
                             marker.setPopup(
-                              new mapboxgl.Popup().setHTML(`<p>${gym.name}</p><br/><p>${gym.address}</p>`)
+                              new mapboxgl.Popup().setHTML(`<div><a href="${gym.url}"> ${gym.name}</a></div><br/><p>${gym.address}</p>`)
                             )
                             marker.addTo( mapbox )
                             bounds = bounds.extend( new mapboxgl.LngLat(gym.coords[0], gym.coords[1]) )

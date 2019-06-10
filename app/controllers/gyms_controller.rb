@@ -9,7 +9,7 @@ class GymsController < ApplicationController
     @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
     @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
     @terms = [params[:search_term], params[:zipcode]].join(' ')
-    
+
   end
 
   def index_coords
@@ -29,7 +29,8 @@ class GymsController < ApplicationController
       {
         coords: [ data['lon'], data['lat'] ],
         name: gym.name,
-        address: gym.address
+        address: gym.address,
+        url: "/gyms/#{gym.id}",
       }
     end
     render json: @coordinates
