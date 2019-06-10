@@ -1,6 +1,6 @@
 <div id="toppage">
 <%=image_tag("loladominguez1.png", height: '280', width: '290', :class => "avatar gravatar2")%>
-
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
 
  <%
 =begin%>
@@ -16,7 +16,7 @@
           <div class="mediacal" >
             <div class="user-label">
               <h1>
-
+                
                 <strong><%= @user.firstname %> <%= @user.lastname %></strong>
               </h1>
               <%= link_to 'Settings', edit_user_path(@user) %>
@@ -43,11 +43,11 @@
               <div id="cardholder">
                   <% @user.gyms.each do |gym| %>
                   <div class="card" style="width: 18rem;">
-                    <%= image_tag Gym::IMGS[0], class: 'card-img-top' %>
+                    <%= image_tag Gym::IMGS.sample, class: 'card-img-top'%>
                     <div class="card-body">
                       <h5 class="card-title"><%= link_to gym.name, gym %></h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">See classes available</a>
+                      <%= link_to "See available classes", gym, class: "btn btn-primary" %>
                     </div>
                   </div>
                   <% end %>

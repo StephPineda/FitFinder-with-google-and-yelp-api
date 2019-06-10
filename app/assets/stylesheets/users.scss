@@ -206,6 +206,7 @@ li {
   width: 100%;
   justify-content: space-around;
   margin-top: 10rem;
+  margin-bottom: 5rem;
 }
 
 .usersaved2 {
@@ -287,4 +288,16 @@ li {
 #cardholder {
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-column-gap: 80px;
+  grid-row-gap: 80px;
+}
+div h3 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Fjalla One", sans-serif;
+}
+div h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 3rem;
 }
