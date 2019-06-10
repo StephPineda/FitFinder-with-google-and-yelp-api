@@ -6,10 +6,7 @@
         <div class="card-body">
           <h5 class="card-title text-center">Edit Account</h5>
           <div id="profileupdate">
-            <div id="profilepic">
-              <%= gravatar_for @user , class: "user-image"%>
-            </div>
-            <a href="https://images.pexels.com/photos/700697/pexels-photo-700697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" target="_blank">Change Photo</a>
+            <%=image_tag("loladominguez1.png", height: '180', width: '180', :class => "avatar gravatar2")%>
           </div>
           <div id="change-settings">
             <%= form_with(model: @user, local: true, class: 'form-signin') do |form| %>
