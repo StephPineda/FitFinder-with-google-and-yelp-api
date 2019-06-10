@@ -28,6 +28,7 @@
                 <h3>Upcoming Classes</h3>
                   <ul>
                     <% @user.events.each do |event| %>
+<<<<<<< HEAD
                     <div class="card animated bounceInLeft" style="width: 18rem;">
                       <div class="card-body">
                         <h5 class="card-title"><%= event.name %></h5>
@@ -35,6 +36,9 @@
                       </div>
                     </div>
 
+=======
+                      <li><%= link_to event.name, event.gym %> <%= event.event_start.strftime("%A, %d %b %Y %l:%M %p") %></li>
+>>>>>>> master
                     <% end %>
                   </ul>
               </div>

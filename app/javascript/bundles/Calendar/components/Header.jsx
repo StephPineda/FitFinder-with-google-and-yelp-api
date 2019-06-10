@@ -5,7 +5,7 @@ const Header = props => (
   <div className="header calendar-row flex-middle">
     <div className="calendar-col col-start">
       <div className="icon" onClick={props.prevMonth} id="prev-month">
-        chevron_left
+        <i class="far fa-arrow-alt-circle-left" />
       </div>
     </div>
     <div className="calendar-col col-center">
@@ -13,7 +13,7 @@ const Header = props => (
     </div>
     <div className="calendar-col col-end">
       <div className="icon" onClick={props.nextMonth} id="next-month">
-        chevron_right
+        <i class="far fa-arrow-alt-circle-right" />
       </div>
     </div>
   </div>
