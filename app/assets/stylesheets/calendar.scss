@@ -40,8 +40,9 @@
   padding: 0;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   width: 100%;
+  color: black;
 }
 
 .row-middle {
@@ -78,7 +79,9 @@
   margin-left: 12em;
   background: var(--neutral-color);
   border: 1px solid var(--light-color);
-  margin-top: 2rem;
+  margin-top: 0rem;
+  border-radius: 25px;
+  margin-bottom: 10rem;
 }
 
 .calendar .header {
@@ -122,6 +125,7 @@
   cursor: pointer;
   background: var(--neutral-color);
   padding-left: 0.25em;
+  border-bottom-left-radius: 5rem;
 }
 
 .calendar .body .current {
@@ -140,6 +144,7 @@
 
 .calendar .body .cell:last-child {
   border-right: none;
+  border-radius: 50%;
 }
 
 .calendar .body .cell .number {
@@ -158,6 +163,7 @@
   height: 100%;
   padding-right: 2.5em;
   overflow: scroll;
+  width: 1rem;
 }
 
 .calendar .body .disabled {
@@ -332,4 +338,7 @@ h5 {
 
 .meta a:hover {
   color: rgba(0, 0, 0, 0.87);
+}
+.calendar .days {
+  background-color: #f7f7f7;
 }

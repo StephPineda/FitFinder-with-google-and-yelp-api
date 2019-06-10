@@ -1,49 +1,45 @@
-<header>
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+<header id="gymsheade">
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/9VlfxuMJxTw?autoplay=1&loop=1&mute=1&%color=white&iv_load_policy=3&playlist=9VlfxuMJxTw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div class="container h-100">
-    <div class="d-flex h-100 text-center align-items-center">
-    <div class="w-100 text-white">
-     <div class="display-3" id=bookclass>Book your class today!</div>
+<div class="d-flex h-100 text-center align-items-center">
+<div class="w-100 text-white">
+     
     </div>
 </header>
 <section class="search-box" id="singlegymcontainer">
   <div class="container-fluid" id="calendargymcontainer" >
     <div class="row">
       <div class="col-md-12 listing-block" id="gymshowcontainer">
+      <div id="bookclass">Book Your Class Today!</div>
         <div id="gym-show">
           <div class="mediacal container" >
-           
            <div class="column" id= "fontstylecolumn"> 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
             <div class="gym-label"></div>
-              
-              <h1 class="marginal"><%= @gym.name %></h1>
-                <div class= "img_tag" >
-                <%= image_tag Gym::IMGS.sample, width:"420px" %>
+             <h1 class="marginal"><%= @gym.name %></h1>
+                <div class= "img_tag">
+                <%= image_tag Gym::IMGS.sample, width:"420px", id:"gympicture" %>
                 </div>
             </div>
             <p>
-              
-              <div class="text-white ">
-              <div>
-               <span>
-               <%= @gym.address %><span> </span><%= @gym.phone_number %>
+             <div class="text-white ">
+             <div>
+              <span>
+               <i class="fas fa-map-marker-alt"></i>
+                <span><%=link_to @gym.address, "https://www.google.com/maps/search/?api=1&query=#{@gym.address}", id:"gymaddresslink"%></span>
+               <i class="fas fa-phone"></i>
+                <span><%=link_to @gym.phone_number, "tel:#{@gym.phone_number}", id:"phonenumber"%></span>
 
                 </span>
-
-              </div>
-              
-              
+                </div>
               </div>
               </p>
-            <p>
-              
-             
-            </p>
+               <p>
+              </p>
             <p class="text-white gymlabel-font">
               $ <%= @gym.price_in_cents %>
             </p>
-
             <div></div>
             <% if current_user %>
               <% if @fave %>
@@ -54,6 +50,7 @@
             <% end %>
             <%= link_to 'Go Back', request.referer %>
           </div>
+          
           <div class="col-md-7 mx-0 px-0 calbox">
             <%= react_component 'Calendar', props: {gymId: @gym.id}, prerender: false %>
           </div>
