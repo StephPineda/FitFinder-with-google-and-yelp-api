@@ -77,3 +77,22 @@ $primary: #64a19d !default;
     }
   }
 }
+
+#toast-container{
+  opacity: 1;
+  font-weight: bold;
+}
+#bs-toast.toast {
+  background-color: #fff;
+  position: absolute;
+  top: 50px;
+  padding: 1rem;
+  left: 2rem;
+  z-index: 1050;
+  .toast-body {
+    color: #000;
+  }
+}
+.fixed-top {
+  z-index: 100
+}
