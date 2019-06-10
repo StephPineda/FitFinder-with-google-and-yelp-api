@@ -8,9 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link
       rel="stylesheet"
@@ -27,24 +25,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
     <%= javascript_pack_tag 'app-bundle' %>
-
   </head>
   <body id="page-top">
-
     <%= render 'layouts/navbar' %>
-
-    <div class="container-fluid bg-dark user-form ">
-
+    <div class="container-fluid bg-dark user-form">
       <% if flash.any? %>
-        <div id="bs-toast" class="toast position-absolute" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 2rem; left: 2rem; z-index: 100" data-delay="2000">
+        <div id="bs-toast" class="toast d-flex justify-content-space-around align-items-center" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
           <div class="toast-header">
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <button type="button" class="mr-2 mb-1 close" data-dismiss="toast" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="toast-body">
+          <div class="toast-body mr-auto" id="toast-container">
             <%= flash[:alert] || flash[:notice] %>
           </div>
         </div>
@@ -52,7 +45,6 @@
 
       <%= yield %>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
