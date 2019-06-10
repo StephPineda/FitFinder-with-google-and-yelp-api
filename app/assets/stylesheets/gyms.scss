@@ -145,8 +145,18 @@ iframe {
   display: block; /* iframes are inline by default */
   background: #000;
   border: none; /* Reset default border */
-  height: 103vh; /* Viewport-relative units */
-  width: 100vw;
+  height: 105vh; /* Viewport-relative units */
+  width: 100%;
+  margin-left: 0em;
+  margin-right: 0;
+  position: relative;
+}
+#bookclass {
+  color: white;
+  width: 85%;
+  text-align: right;
+  font-size: 40px;
+  font-family: "Fjalla One", sans-serif;
 }
 
 .nav {
@@ -180,6 +190,7 @@ iframe {
 
 .gym-show-button {
   width: 350px;
+  margin-left: 10rem !important;
 }
 
 .eventbtn {
@@ -191,7 +202,7 @@ iframe {
   margin-bottom: 0;
 }
 
-#resultheader{
+#resultheader {
   background-color: #343a40;
   height: 100px;
   font-size: 10rem;
@@ -205,14 +216,17 @@ iframe {
 }
 
 h1 #resultheader {
-  color: -webkit-linear-gradient( rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  color: -webkit-linear-gradient(
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0)
+  );
   line-height: 8rem;
   letter-spacing: 0.6rem;
   webkit-text-fill-color: transparent;
   font-weight: 500;
 }
 
-#resultmasthead{
+#resultmasthead {
   padding-bottom: 0;
   min-height: 10rem;
   position: fixed;
@@ -221,7 +235,10 @@ h1 #resultheader {
 
 #gymshowcontainer {
   padding: 0;
-  margin: 0;
+  margin: 80px 0 0 0;
+  background-color: #343a40;
+  position: relative;
+  height: 100%;
 }
 
 #calendargymcontainer {
@@ -231,4 +248,54 @@ h1 #resultheader {
 #singlegymcontainer {
   margin-top: 0;
   margin-bottom: 0;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+b,
+.text-white {
+  color: white;
+  margin-left: 20%;
+}
+
+.gymlabel-font {
+  font-weight: lighter;
+  font-size: 25px;
+  margin-left: 50%;
+}
+.img_tag {
+  margin-left: 90px;
+}
+#gympicture {
+  border-radius: 10%;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-left: 20%;
+}
+.marginal {
+  margin-left: 10rem;
+  font-size: 3rem;
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+}
+#phonenumber {
+  color: white;
+  text-decoration: none;
+}
+#gymaddresslink {
+  color: white;
+  text-decoration: none;
 }
