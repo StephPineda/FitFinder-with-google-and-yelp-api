@@ -11,8 +11,9 @@
         <% @gyms.each_with_index do |gym, index| %>
         <div class="media">
           <div class="fav-box">
+
             <% if current_user %>
-              <% @fave = Favorite.find_by(user_id: current_user.id, gym_id: gym.id) %>
+            <% @fave = Favorite.find_by(user_id: current_user.id, gym_id: gym.id) %>
               <% if @fave.present? %>
                 <%= link_to "<i class='fas fa-heart'></i>".html_safe, favorite_path(id: @fave.id), method: 'delete', class: "", style: "color:red;" %>
               <% else %>
