@@ -34,16 +34,12 @@
 .search-box {
   width: 100%;
   margin: 0 auto 40px auto;
-  // box-shadow: 10px 13px 0 rgba(0, 0, 0, 0.2);
   padding-left: 1rem;
-  height: 100vh;
 }
 
 .listing-block {
   background: #fff;
-  // height: 500px;
   padding-top: 20px;
-  // overflow-y: scroll;
 }
 
 .slimScrollDiv {
@@ -183,10 +179,6 @@ iframe {
   flex-direction: column;
   align-items: stretch;
   text-align: center;
-  margin-top: 150px;
-}
-
-.calbox {
 }
 
 .gym-show-button {
@@ -229,9 +221,7 @@ h1 #resultheader {
 
 #resultmasthead {
   padding-bottom: 0;
-  min-height: 10rem;
-  position: fixed;
-  text-align: center;
+  min-height: 10rem;  
 }
 
 #gymshowcontainer {
@@ -266,13 +256,12 @@ h1 #resultheader {
 b,
 .text-white {
   color: white;
-  margin-left: 20%;
 }
 
 .gymlabel-font {
   font-weight: lighter;
   font-size: 25px;
-  margin-left: 50%;
+  // margin-left: 50%;
 }
 .img_tag {
   margin-left: 90px;
@@ -284,7 +273,6 @@ b,
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
-  margin-left: 20%;
 }
 .marginal {
   margin-left: 10rem;
@@ -299,4 +287,11 @@ b,
 #gymaddresslink {
   color: white;
   text-decoration: none;
+}
+#gymidfont{
+  text-align: center;
+}
+#gymshowinfo{
+  text-align: center;
+  margin-left: 80px;
 }
