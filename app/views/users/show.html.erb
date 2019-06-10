@@ -28,7 +28,7 @@
                 <h3>Upcoming Classes</h3>
                   <ul>
                     <% @user.events.each do |event| %>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card animated bounceInLeft" style="width: 18rem;">
                       <div class="card-body">
                         <h5 class="card-title"><%= event.name %></h5>
                         <p class="card-text"><%= event.event_start.strftime("%A, %d %b %Y %l:%M %p") %></p>
@@ -42,7 +42,7 @@
               <h3>Favorite Gyms</h3>
               <div id="cardholder">
                   <% @user.gyms.each do |gym| %>
-                  <div class="card" style="width: 18rem;">
+                  <div class="card animated bounceInRight" style="width: 18rem;">
                     <%= image_tag Gym::IMGS.sample, class: 'card-img-top'%>
                     <div class="card-body">
                       <h5 class="card-title"><%= link_to gym.name, gym %></h5>
