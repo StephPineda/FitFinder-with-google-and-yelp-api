@@ -1,50 +1,55 @@
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content="width=device-width,
+    intital-scaled=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    </head>
+    <body>
+    <h1>My Google Maps</h1>
+    <div id="map"></div>
+    <script>
+    function initMap(){
+      //Map options 
+      var options = {
+        zoom:8,
+        center:{lat:26.3014,lng:-80.6327}
+      }
+      //New map
+      var map = new 
+      google.maps.Map(document.getElementById('map'), options);
 
-<style>
-  #menu {
-    position: absolute;
-    background: #fff;
-    padding: 10px;
-    font-family: 'Open Sans', sans-serif;
-  }
-</style>
+      //Add marker
+      // var marker = new google.maps.Marker({
+      //   position:{lat:25.7617,lng:80.1918}
+      //   map:map
+       
+      // });
 
-<div id='map'></div>
-<div id='menu'>
-  <input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'>
-  <label for='streets'>streets</label>
-  <input id='light-v10' type='radio' name='rtoggle' value='light'>
-  <label for='light'>light</label>
-  <input id='dark-v10' type='radio' name='rtoggle' value='dark'>
-  <label for='dark'>dark</label>
-  <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
-  <label for='outdoors'>outdoors</label>
-  <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
-  <label for='satellite'>satellite</label>
-</div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZ3ltZmluZGVyIiwiYSI6ImNqdnp1Znh3bzA0YXIzeW9kNzhqMXJqZnQifQ.UyRzS7V1X-1vRSfMWwMJ6Q';
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 13,
-    center: [4.899, 52.372]
-  });
+      // var infoWindow = new google.mapsInfoWindow({
+      //   content:'<h1>Miami FL</h1>'
+      // });
+      // marker.addListener('click, function(){
+      //   infoWindow.open(map, marker);
 
-  var layerList = document.getElementById('menu');
-  var inputs = layerList.getElementsByTagName('input');
+      // });
+      
+      addMarker({lat:25.7617,lng:80.1918})
+      
+      //Add marker function
 
-  function switchLayer(layer) {
-    var layerId = layer.target.id;
-    map.setStyle('mapbox://styles/mapbox/' + layerId);
-  }
+      function addMarker(coords){
+        var marker = new google.maps.Marker({
+          position:coords,
+          map:map,
+        });
 
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].onclick = switchLayer;
-  }
-</script>
+      }
+
+    }    
+   
+  
+  </body>
+</html>

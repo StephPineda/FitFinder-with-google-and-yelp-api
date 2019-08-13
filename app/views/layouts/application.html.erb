@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key='+Rails.application.credentials.google_maps_api_key %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+ 
     <title>Fitfinder</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -27,7 +30,9 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <%= javascript_pack_tag 'app-bundle' %>
+    <%= yield(:head_tags) %>
   </head>
+ 
   <body id="page-top">
     <%= render 'layouts/navbar' %>
     <div class="container-fluid bg-dark user-form">

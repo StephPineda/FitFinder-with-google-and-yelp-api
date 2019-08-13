@@ -85,7 +85,12 @@ GEM
     geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    google_maps_service (0.4.2)
+      hurley (~> 0.1)
+      multi_json (~> 1.11)
+      retriable (~> 2.0)
     hirb (0.7.3)
+    hurley (0.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
@@ -110,6 +115,7 @@ GEM
       libv8 (>= 6.9.411)
     minitest (5.11.3)
     msgpack (1.2.10)
+    multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -163,6 +169,7 @@ GEM
       rails (>= 3.2)
       rainbow (~> 3.0)
     regexp_parser (1.5.1)
+    retriable (2.1.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass (3.7.4)
@@ -229,6 +236,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   faker
   geocoder
+  google_maps_service
   hirb
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

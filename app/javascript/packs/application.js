@@ -3,7 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start();
+// require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("jquery");
@@ -44,10 +44,6 @@ $(document).on("ready turbolinks:load", function() {
   });
 
   // Activate scrollspy to add active class to navbar items on scroll
-  $("body").scrollspy({
-    target: "#mainNav",
-    offset: 100
-  });
 
   // Collapse Navbar
   var navbarCollapse = function() {
@@ -71,7 +67,4 @@ $(document).on("ready turbolinks:load", function() {
   if (signin) {
     signin.classList.add("animated", "zoomIn");
   }
-
-  var toast = $('#bs-toast').toast('show') 
-
 });
