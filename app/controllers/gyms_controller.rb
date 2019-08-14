@@ -3,13 +3,22 @@ class GymsController < ApplicationController
 
   # GET /gyms
   # GET /gyms.json
-  def index
-    #@gym = Gym.find(params[:id])
-    @gyms = Gym.all
-    @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
-    @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
-    @terms = [params[:search_term], params[:zipcode]].join(' ')
+  # def index
+  #   #@gym = Gym.find(params[:id])
+  #   @gyms = Gym.all
+  #   @gyms = @gyms.by_name( params[:search_term] ) if params[:search_term]
+  #   @gyms = @gyms.by_zipcode( params[:zipcode] ) if params[:zipcode]
+  #   @terms = [params[:search_term], params[:zipcode]].join(' ')
 
+  # end
+
+  def index
+    location = params[:zipcode] || 'Florida'
+    @gyms = HTTParty.get( "https://api.yelp.com/v3/businesses/search?&attributes=deals&term=fitness gym #{params[:search_term]}&location=#{location}" , {
+      headers: { 'Authorization': 'Bearer r4wFUtshxYjSPcFpTycPOSIuza5_eVkTvpjKFlSdF4bqCqIIaQh2y5rjliAUIo__6h6L6JMDnLVQJWr6eP6uCR2kQgRm1-96gPkmpZRbyRsfq7mJbTt8NLznDQ1TXXYx' }
+    })
+    @gyms = @gyms.parsed_response["businesses"]
+    @terms = [params[:search_term], params[:zipcode]].join(' ')
   end
 
   def index_coords
