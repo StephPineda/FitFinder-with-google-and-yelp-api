@@ -19,7 +19,7 @@ class GymsController < ApplicationController
     })
     @gyms = @gyms.parsed_response["businesses"]
     @terms = [params[:search_term], params[:zipcode]].join(' ')
-  end
+  end 
 
   def index_coords
     @gyms = Gym.all

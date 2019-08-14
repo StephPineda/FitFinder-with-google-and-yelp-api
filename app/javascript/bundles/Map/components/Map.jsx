@@ -5,7 +5,7 @@ const axios = require("axios");
 // Make a request for a user with a given ID
 axios
   .get(
-    "https://api.yelp.com/v3/businesses/search?term=delis&location=Miami&attributes=deals&term=food"
+    "https://api.yelp.com/v3/businesses/search?&location=${}&attributes=deals&term=fitness gym"
   )
   .then(function(response) {
     // handle success
